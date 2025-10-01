@@ -12,7 +12,7 @@ const EMAIL_CONFIG = {
 
 // Create transporter
 const createTransporter = () => {
-  return nodemailer.createTransporter(EMAIL_CONFIG);
+  return nodemailer.createTransport(EMAIL_CONFIG);
 };
 
 export interface ContactFormData {
