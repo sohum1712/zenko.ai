@@ -7,19 +7,27 @@ import Portfolio from '@/components/Portfolio';
 import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import SkipLinks from '@/components/SkipLinks';
+import SEOHead from '@/components/SEOHead';
 
 const Home: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black">
-      <Header />
-      <Hero />
-      <Services />
-      <About />
-      <Portfolio />
-      <Testimonials />
-      <Contact />
-      <Footer />
-    </div>
+    <>
+      <SEOHead />
+      <SkipLinks />
+      <div className="min-h-screen">
+        <Header />
+        <main id="main-content" role="main" aria-label="Main content">
+          <Hero />
+          <Services />
+          <About />
+          <Portfolio />
+          <Testimonials />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 

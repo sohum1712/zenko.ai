@@ -12,10 +12,10 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="py-12 bg-background border-t border-border">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8">
-          <div className="md:col-span-2">
+    <footer id="footer" className="py-16 bg-[#1b1b1b] border-t-4 border-[#D1FF00]" role="contentinfo">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="lg:col-span-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -23,19 +23,21 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
               className="flex items-center space-x-2 mb-6"
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#111ac3] to-[#D1FF00] rounded-xl flex items-center justify-center neon-glow">
                 <span className="text-xl font-bold text-white">Z</span>
               </div>
-              <span className="text-2xl font-bold gradient-text">Zenko</span>
+              <span className="text-3xl font-bold text-white">
+                ZEN<span className="text-[#D1FF00]">KO</span>
+              </span>
             </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-muted-foreground mb-6 max-w-md"
+              className="text-white/80 mb-8 max-w-md text-base leading-relaxed"
             >
-              Empowering businesses with modern web solutions that drive growth and success in the digital age.
+Empowering businesses with innovative digital solutions that transform visions into reality. We combine creativity, strategy, and cutting-edge technology to deliver exceptional results.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -46,7 +48,7 @@ const Footer: React.FC = () => {
             >
               <motion.a
                 href="#"
-                className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all"
+                className="w-12 h-12 bg-[#242424] rounded-xl flex items-center justify-center hover:bg-[#D1FF00] hover:text-black transition-all duration-300 transform hover:scale-110 neon-glow"
                 whileHover={{ scale: 1.1 }}
                 data-testid="social-facebook"
               >
@@ -54,7 +56,7 @@ const Footer: React.FC = () => {
               </motion.a>
               <motion.a
                 href="#"
-                className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all"
+                className="w-12 h-12 bg-[#242424] rounded-xl flex items-center justify-center hover:bg-[#D1FF00] hover:text-black transition-all duration-300 transform hover:scale-110 neon-glow"
                 whileHover={{ scale: 1.1 }}
                 data-testid="social-instagram"
               >
@@ -62,7 +64,7 @@ const Footer: React.FC = () => {
               </motion.a>
               <motion.a
                 href="#"
-                className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all"
+                className="w-12 h-12 bg-[#242424] rounded-xl flex items-center justify-center hover:bg-[#D1FF00] hover:text-black transition-all duration-300 transform hover:scale-110 neon-glow"
                 whileHover={{ scale: 1.1 }}
                 data-testid="social-linkedin"
               >
@@ -70,7 +72,7 @@ const Footer: React.FC = () => {
               </motion.a>
               <motion.a
                 href="#"
-                className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all"
+                className="w-12 h-12 bg-[#242424] rounded-xl flex items-center justify-center hover:bg-[#D1FF00] hover:text-black transition-all duration-300 transform hover:scale-110 neon-glow"
                 whileHover={{ scale: 1.1 }}
                 data-testid="social-twitter"
               >
@@ -85,12 +87,12 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-bold mb-4">Services</h4>
-            <ul className="space-y-2 text-muted-foreground">
+            <h4 className="font-bold mb-6 text-white text-xl">Services</h4>
+            <ul className="space-y-3 text-white/70">
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-                  className="hover:text-foreground transition-colors text-left"
+                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
                   data-testid="footer-business-websites"
                 >
                   Business Websites
@@ -99,7 +101,7 @@ const Footer: React.FC = () => {
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-                  className="hover:text-foreground transition-colors text-left"
+                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
                   data-testid="footer-ecommerce"
                 >
                   E-commerce
@@ -108,7 +110,7 @@ const Footer: React.FC = () => {
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-                  className="hover:text-foreground transition-colors text-left"
+                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
                   data-testid="footer-portfolios"
                 >
                   Portfolios
@@ -117,7 +119,7 @@ const Footer: React.FC = () => {
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-                  className="hover:text-foreground transition-colors text-left"
+                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
                   data-testid="footer-seo-marketing"
                 >
                   SEO & Marketing
@@ -126,7 +128,7 @@ const Footer: React.FC = () => {
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-                  className="hover:text-foreground transition-colors text-left"
+                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
                   data-testid="footer-hosting-support"
                 >
                   Hosting & Support
@@ -141,12 +143,12 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-muted-foreground">
+            <h4 className="font-bold mb-6 text-white text-xl">Quick Links</h4>
+            <ul className="space-y-3 text-white/70">
               <li>
                 <button
                   onClick={() => scrollToSection('about')}
-                  className="hover:text-foreground transition-colors text-left"
+                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
                   data-testid="footer-about"
                 >
                   About Us
@@ -155,7 +157,7 @@ const Footer: React.FC = () => {
               <li>
                 <button
                   onClick={() => scrollToSection('portfolio')}
-                  className="hover:text-foreground transition-colors text-left"
+                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
                   data-testid="footer-portfolio"
                 >
                   Portfolio
@@ -164,7 +166,7 @@ const Footer: React.FC = () => {
               <li>
                 <button
                   onClick={() => scrollToSection('testimonials')}
-                  className="hover:text-foreground transition-colors text-left"
+                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
                   data-testid="footer-testimonials"
                 >
                   Testimonials
@@ -173,14 +175,14 @@ const Footer: React.FC = () => {
               <li>
                 <button
                   onClick={() => scrollToSection('contact')}
-                  className="hover:text-foreground transition-colors text-left"
+                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
                   data-testid="footer-contact"
                 >
                   Contact
                 </button>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition-colors" data-testid="footer-blog">
+                <a href="#" className="hover:text-[#D1FF00] transition-colors text-sm" data-testid="footer-blog">
                   Blog
                 </a>
               </li>
@@ -193,10 +195,10 @@ const Footer: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="border-t border-border mt-12 pt-8 text-center text-muted-foreground"
+          className="border-t-2 border-[#D1FF00]/30 mt-16 pt-8 text-center text-white/60"
         >
-          <p>
-            © 2024 Zenko. All rights reserved. Built with ❤️ for digital future.
+          <p className="text-base">
+            © 2024 <span className="text-[#D1FF00] font-bold">Zenko Digital</span>. All rights reserved. Built with <span className="text-[#D1FF00]">❤️</span> for the digital future.
           </p>
         </motion.div>
       </div>
