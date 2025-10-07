@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer id="footer" className="py-16 bg-[#1b1b1b] border-t-4 border-[#D1FF00]" role="contentinfo">
+    <footer id="footer" className="py-10 bg-[#171717] border-t-4 border-[#F25C23]" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div className="lg:col-span-2">
@@ -23,11 +23,11 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
               className="flex items-center space-x-2 mb-6"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-[#111ac3] to-[#D1FF00] rounded-xl flex items-center justify-center neon-glow">
-                <span className="text-xl font-bold text-white">Z</span>
+              <div className="w-10 h-10 bg-[#4D4D4D] rounded-xl flex items-center justify-center">
+<span className="text-xl font-bold text-[#DEDEDE]">Z</span>
               </div>
-              <span className="text-3xl font-bold text-white">
-                ZEN<span className="text-[#D1FF00]">KO</span>
+              <span className="text-2xl font-bold text-[#DEDEDE]">
+                ZEN<span className="text-[#F25C23]">KO</span>
               </span>
             </motion.div>
             <motion.p
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-white/80 mb-8 max-w-md text-base leading-relaxed"
+              className="text-[#DEDEDE]/80 mb-8 max-w-md text-base leading-relaxed"
             >
 Empowering businesses with innovative digital solutions that transform visions into reality. We combine creativity, strategy, and cutting-edge technology to deliver exceptional results.
             </motion.p>
@@ -44,11 +44,11 @@ Empowering businesses with innovative digital solutions that transform visions i
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="flex space-x-4"
+              className="flex space-x-3"
             >
               <motion.a
                 href="#"
-                className="w-12 h-12 bg-[#242424] rounded-xl flex items-center justify-center hover:bg-[#D1FF00] hover:text-black transition-all duration-300 transform hover:scale-110 neon-glow"
+className="w-10 h-10 bg-[#4D4D4D] rounded-xl flex items-center justify-center hover:bg-[#F25C23] hover:text-[#171717] transition-all duration-300"
                 whileHover={{ scale: 1.1 }}
                 data-testid="social-facebook"
               >
@@ -56,7 +56,7 @@ Empowering businesses with innovative digital solutions that transform visions i
               </motion.a>
               <motion.a
                 href="#"
-                className="w-12 h-12 bg-[#242424] rounded-xl flex items-center justify-center hover:bg-[#D1FF00] hover:text-black transition-all duration-300 transform hover:scale-110 neon-glow"
+className="w-10 h-10 bg-[#4D4D4D] rounded-xl flex items-center justify-center hover:bg-[#F25C23] hover:text-[#171717] transition-all duration-300"
                 whileHover={{ scale: 1.1 }}
                 data-testid="social-instagram"
               >
@@ -64,7 +64,7 @@ Empowering businesses with innovative digital solutions that transform visions i
               </motion.a>
               <motion.a
                 href="#"
-                className="w-12 h-12 bg-[#242424] rounded-xl flex items-center justify-center hover:bg-[#D1FF00] hover:text-black transition-all duration-300 transform hover:scale-110 neon-glow"
+className="w-10 h-10 bg-[#4D4D4D] rounded-xl flex items-center justify-center hover:bg-[#F25C23] hover:text-[#171717] transition-all duration-300"
                 whileHover={{ scale: 1.1 }}
                 data-testid="social-linkedin"
               >
@@ -72,7 +72,7 @@ Empowering businesses with innovative digital solutions that transform visions i
               </motion.a>
               <motion.a
                 href="#"
-                className="w-12 h-12 bg-[#242424] rounded-xl flex items-center justify-center hover:bg-[#D1FF00] hover:text-black transition-all duration-300 transform hover:scale-110 neon-glow"
+className="w-10 h-10 bg-[#4D4D4D] rounded-xl flex items-center justify-center hover:bg-[#F25C23] hover:text-[#171717] transition-all duration-300"
                 whileHover={{ scale: 1.1 }}
                 data-testid="social-twitter"
               >
@@ -87,12 +87,12 @@ Empowering businesses with innovative digital solutions that transform visions i
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-bold mb-6 text-white text-xl">Services</h4>
-            <ul className="space-y-3 text-white/70">
+            <h4 className="font-bold mb-6 text-[#DEDEDE] text-xl">Services</h4>
+            <ul className="space-y-3 text-[#DEDEDE]/70">
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
+className="hover:text-[#F25C23] transition-colors text-left text-sm"
                   data-testid="footer-business-websites"
                 >
                   Business Websites
@@ -101,7 +101,7 @@ Empowering businesses with innovative digital solutions that transform visions i
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
+className="hover:text-[#F25C23] transition-colors text-left text-sm"
                   data-testid="footer-ecommerce"
                 >
                   E-commerce
@@ -110,7 +110,7 @@ Empowering businesses with innovative digital solutions that transform visions i
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
+className="hover:text-[#F25C23] transition-colors text-left text-sm"
                   data-testid="footer-portfolios"
                 >
                   Portfolios
@@ -119,7 +119,7 @@ Empowering businesses with innovative digital solutions that transform visions i
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
+className="hover:text-[#F25C23] transition-colors text-left text-sm"
                   data-testid="footer-seo-marketing"
                 >
                   SEO & Marketing
@@ -128,7 +128,7 @@ Empowering businesses with innovative digital solutions that transform visions i
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
+className="hover:text-[#F25C23] transition-colors text-left text-sm"
                   data-testid="footer-hosting-support"
                 >
                   Hosting & Support
@@ -143,12 +143,12 @@ Empowering businesses with innovative digital solutions that transform visions i
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-bold mb-6 text-white text-xl">Quick Links</h4>
-            <ul className="space-y-3 text-white/70">
+            <h4 className="font-bold mb-6 text-[#DEDEDE] text-xl">Quick Links</h4>
+            <ul className="space-y-3 text-[#DEDEDE]/70">
               <li>
                 <button
                   onClick={() => scrollToSection('about')}
-                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
+className="hover:text-[#F25C23] transition-colors text-left text-sm"
                   data-testid="footer-about"
                 >
                   About Us
@@ -157,7 +157,7 @@ Empowering businesses with innovative digital solutions that transform visions i
               <li>
                 <button
                   onClick={() => scrollToSection('portfolio')}
-                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
+className="hover:text-[#F25C23] transition-colors text-left text-sm"
                   data-testid="footer-portfolio"
                 >
                   Portfolio
@@ -166,7 +166,7 @@ Empowering businesses with innovative digital solutions that transform visions i
               <li>
                 <button
                   onClick={() => scrollToSection('testimonials')}
-                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
+className="hover:text-[#F25C23] transition-colors text-left text-sm"
                   data-testid="footer-testimonials"
                 >
                   Testimonials
@@ -175,14 +175,14 @@ Empowering businesses with innovative digital solutions that transform visions i
               <li>
                 <button
                   onClick={() => scrollToSection('contact')}
-                  className="hover:text-[#D1FF00] transition-colors text-left text-sm"
+className="hover:text-[#F25C23] transition-colors text-left text-sm"
                   data-testid="footer-contact"
                 >
                   Contact
                 </button>
               </li>
               <li>
-                <a href="#" className="hover:text-[#D1FF00] transition-colors text-sm" data-testid="footer-blog">
+<a href="#" className="hover:text-[#F25C23] transition-colors text-sm" data-testid="footer-blog">
                   Blog
                 </a>
               </li>
@@ -195,10 +195,10 @@ Empowering businesses with innovative digital solutions that transform visions i
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="border-t-2 border-[#D1FF00]/30 mt-16 pt-8 text-center text-white/60"
+          className="border-t-2 border-[#4D4D4D] mt-10 pt-6 text-center text-[#DEDEDE]/60 text-sm"
         >
           <p className="text-base">
-            © 2024 <span className="text-[#D1FF00] font-bold">Zenko Digital</span>. All rights reserved. Built with <span className="text-[#D1FF00]">❤️</span> for the digital future.
+            © 2024 <span className="text-[#F25C23] font-bold">Zenko Digital</span>. All rights reserved. Built with <span className="text-[#F25C23]">❤️</span> for the digital future.
           </p>
         </motion.div>
       </div>

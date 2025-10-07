@@ -37,28 +37,28 @@ class ErrorBoundary extends Component<Props, State> {
       }
 
       return (
-        <div className="min-h-screen bg-[#1b1b1b] flex items-center justify-center px-4">
+        <div className="min-h-screen bg-[#171717] flex items-center justify-center px-4">
           <div className="max-w-md w-full">
             <div className="text-center">
-              <div className="w-24 h-24 bg-[#D1FF00] rounded-full flex items-center justify-center mx-auto mb-8">
+              <div className="w-24 h-24 bg-[#F25C23] rounded-full flex items-center justify-center mx-auto mb-8">
                 <span className="text-4xl">⚠️</span>
               </div>
-              <h1 className="text-3xl font-bold text-white mb-4">
+              <h1 className="text-3xl font-bold text-[#DEDEDE] mb-4">
                 Oops! Something went wrong
               </h1>
-              <p className="text-white/70 mb-8 leading-relaxed">
+              <p className="text-[#DEDEDE]/70 mb-8 leading-relaxed">
                 We're experiencing a technical issue. Our team has been notified and is working on a fix.
               </p>
               <div className="space-y-4">
                 <button
                   onClick={() => window.location.reload()}
-                  className="w-full bg-[#D1FF00] text-black px-6 py-3 rounded-xl font-semibold hover:bg-[#c4e71a] transition-colors duration-300"
+                  className="w-full bg-[#F25C23] text-[#171717] px-6 py-3 rounded-xl font-semibold hover:opacity-90 transition-colors duration-300"
                 >
                   Reload Page
                 </button>
                 <button
                   onClick={() => window.history.back()}
-                  className="w-full bg-transparent border-2 border-[#D1FF00] text-[#D1FF00] px-6 py-3 rounded-xl font-semibold hover:bg-[#D1FF00] hover:text-black transition-colors duration-300"
+                  className="w-full bg-transparent border-2 border-[#F25C23] text-[#F25C23] px-6 py-3 rounded-xl font-semibold hover:bg-[#F25C23] hover:text-[#171717] transition-colors duration-300"
                 >
                   Go Back
                 </button>

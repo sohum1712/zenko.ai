@@ -59,7 +59,7 @@ const portfolioItems = [
 ];
 
 const Portfolio: React.FC = () => (
-  <section id="portfolio" className="py-20 bg-[#1b1b1b] relative overflow-hidden">
+  <section id="portfolio" className="py-20 bg-[#171717] relative overflow-hidden">
     {/* Background decoration */}
     <div className="absolute inset-0 bg-pattern-grid opacity-5"></div>
     
@@ -67,15 +67,15 @@ const Portfolio: React.FC = () => (
       {/* Section Header */}
       <div className="text-center mb-16">
         <div className="flex items-center justify-center gap-3 mb-6">
-          <div className="w-8 h-8 bg-[#D1FF00] rounded-full flex items-center justify-center animate-pulse">
+          <div className="w-8 h-8 bg-[#F25C23] rounded-full flex items-center justify-center">
             <span className="block w-3 h-3 bg-black rounded-full"></span>
           </div>
-          <span className="uppercase text-sm font-bold tracking-widest text-[#D1FF00]">OUR WORK</span>
+          <span className="uppercase text-sm font-bold tracking-widest text-[#F25C23]">OUR WORK</span>
         </div>
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-          Our <span className="text-[#D1FF00]">Creative</span> Portfolio
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#DEDEDE] mb-6 leading-tight">
+          Our <span className="text-[#F25C23]">Creative</span> Portfolio
         </h2>
-        <p className="text-white/80 max-w-3xl mx-auto text-lg leading-relaxed">
+        <p className="text-[#DEDEDE]/80 max-w-3xl mx-auto text-lg leading-relaxed">
           Discover our comprehensive range of digital solutions designed to accelerate your business growth and create lasting impact in your industry.
         </p>
       </div>
@@ -87,8 +87,8 @@ const Portfolio: React.FC = () => (
             className={`
               group relative rounded-3xl border-2 transition-all duration-500 hover-lift cursor-pointer overflow-hidden
               ${item.isPrimary 
-                ? 'bg-[#111ac3] border-[#111ac3] hover:border-[#D1FF00] neon-glow-blue' 
-                : 'bg-[#242424] border-[#242424] hover:border-[#D1FF00]'
+                ? 'bg-[#4D4D4D] border-[#4D4D4D] hover:border-[#F25C23]' 
+                : 'bg-[#171717] border-[#171717] hover:border-[#F25C23]'
               } p-8 flex flex-col min-h-[420px]
             `}
           >
@@ -96,30 +96,30 @@ const Portfolio: React.FC = () => (
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs px-2 py-1 bg-[#D1FF00]/20 text-[#D1FF00] rounded-full font-semibold uppercase tracking-wider">
+                  <span className="text-xs px-2 py-1 bg-[#F25C23]/20 text-[#F25C23] rounded-full font-semibold uppercase tracking-wider">
                     {item.category}
                   </span>
                 </div>
-                <h3 className={`text-xl font-black mb-2 group-hover:text-[#D1FF00] transition-colors duration-300 ${
-                  item.isPrimary ? 'text-white' : 'text-white'
+                <h3 className={`text-xl font-black mb-2 group-hover:text-[#F25C23] transition-colors duration-300 ${
+                  item.isPrimary ? 'text-[#DEDEDE]' : 'text-[#DEDEDE]'
                 }`}>
                   {item.title}
                 </h3>
               </div>
               <div className={`
                 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-45
-                ${item.isPrimary ? 'bg-[#D1FF00]' : 'bg-[#111ac3]'}
+                ${item.isPrimary ? 'bg-[#F25C23]' : 'bg-[#4D4D4D]'}
               `}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M7 17L17 7" className={item.isPrimary ? 'stroke-black' : 'stroke-[#D1FF00]'} />
-                  <path d="M7 7h10v10" className={item.isPrimary ? 'stroke-black' : 'stroke-[#D1FF00]'} />
+                  <path d="M7 17L17 7" className={item.isPrimary ? 'stroke-[#171717]' : 'stroke-[#F25C23]'} />
+                  <path d="M7 7h10v10" className={item.isPrimary ? 'stroke-[#171717]' : 'stroke-[#F25C23]'} />
                 </svg>
               </div>
             </div>
             
             {/* Description */}
             <p className={`text-sm mb-6 leading-relaxed flex-grow ${
-              item.isPrimary ? 'text-white/90' : 'text-white/80'
+              item.isPrimary ? 'text-[#DEDEDE]/90' : 'text-[#DEDEDE]/80'
             }`}>
               {item.description}
             </p>
@@ -130,7 +130,7 @@ const Portfolio: React.FC = () => (
                 {item.technologies.map((tech, techIdx) => (
                   <span 
                     key={techIdx}
-                    className="text-xs px-2 py-1 bg-white/10 text-white/70 rounded-md font-medium"
+                    className="text-xs px-2 py-1 bg-[#DEDEDE]/10 text-[#DEDEDE]/70 rounded-md font-medium"
                   >
                     {tech}
                   </span>
@@ -150,32 +150,32 @@ const Portfolio: React.FC = () => (
             </div>
             
             {/* Hover overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#D1FF00]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#F25C23]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
           </div>
         ))}
       </div>
       {/* Inspirational Quote Section */}
-      <div className="text-center bg-gradient-to-r from-[#242424] via-[#2a2a2a] to-[#242424] rounded-3xl p-12 border border-[#D1FF00]/20">
+      <div className="text-center bg-[#171717] rounded-3xl p-12 border border-[#4D4D4D]">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="w-2 h-2 bg-[#D1FF00] rounded-full animate-pulse"></div>
-            <div className="w-3 h-3 bg-[#D1FF00] rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-            <div className="w-2 h-2 bg-[#D1FF00] rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+            <div className="w-2 h-2 bg-[#F25C23] rounded-full"></div>
+            <div className="w-3 h-3 bg-[#F25C23] rounded-full" style={{animationDelay: '0.2s'}}></div>
+            <div className="w-2 h-2 bg-[#F25C23] rounded-full" style={{animationDelay: '0.4s'}}></div>
           </div>
-          <blockquote className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-8">
-            "Keep <span className="bg-[#D1FF00] px-3 py-1 rounded-xl text-black inline-block transform -rotate-1">Creating</span><br className="md:hidden" /> 
-            until you find your own <span className="text-[#D1FF00] relative">
+          <blockquote className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#DEDEDE] leading-tight mb-8">
+            "Keep <span className="bg-[#F25C23] px-3 py-1 rounded-xl text-[#171717] inline-block transform -rotate-1">Creating</span><br className="md:hidden" /> 
+            until you find your own <span className="text-[#F25C23] relative">
               Audience
-              <div className="absolute -bottom-2 left-0 w-full h-1 bg-[#D1FF00] rounded-full transform -rotate-1"></div>
+              <div className="absolute -bottom-2 left-0 w-full h-1 bg-[#F25C23] rounded-full transform -rotate-1"></div>
             </span>."
           </blockquote>
           <div className="flex items-center justify-center gap-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-[#111ac3] to-[#D1FF00] rounded-2xl flex items-center justify-center">
-              <span className="text-2xl font-black text-white">Z</span>
+            <div className="w-16 h-16 bg-[#4D4D4D] rounded-2xl flex items-center justify-center">
+              <span className="text-2xl font-black text-[#DEDEDE]">Z</span>
             </div>
             <div className="text-left">
-              <p className="text-[#D1FF00] font-bold text-lg">Zenko Team</p>
-              <p className="text-white/70 text-sm">Creative Directors & Founders</p>
+              <p className="text-[#F25C23] font-bold text-lg">Zenko Team</p>
+              <p className="text-[#DEDEDE]/70 text-sm">Creative Directors & Founders</p>
             </div>
           </div>
         </div>

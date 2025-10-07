@@ -66,15 +66,15 @@ const LazyImage: React.FC<LazyImageProps> = ({
     >
       {/* Skeleton/Placeholder */}
       {!isLoaded && !hasError && (
-        <div className="absolute inset-0 bg-gradient-to-r from-[#242424] via-[#2a2a2a] to-[#242424] animate-pulse">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 animate-slide-right" />
+        <div className="absolute inset-0 bg-[#4D4D4D] animate-pulse">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#DEDEDE]/10 to-transparent -skew-x-12" />
         </div>
       )}
       
       {/* Error State */}
       {hasError && (
-        <div className="absolute inset-0 bg-[#242424] flex items-center justify-center">
-          <div className="text-center text-white/50">
+        <div className="absolute inset-0 bg-[#171717] flex items-center justify-center">
+          <div className="text-center text-[#DEDEDE]/50">
             <svg className="w-8 h-8 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
             </svg>
@@ -101,8 +101,8 @@ const LazyImage: React.FC<LazyImageProps> = ({
       
       {/* Loading overlay */}
       {isVisible && !isLoaded && !hasError && (
-        <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-          <div className="w-8 h-8 border-2 border-[#D1FF00] border-t-transparent rounded-full animate-spin" />
+        <div className="absolute inset-0 bg-[#171717]/20 flex items-center justify-center">
+          <div className="w-8 h-8 border-2 border-[#F25C23] border-t-transparent rounded-full animate-spin" />
         </div>
       )}
     </div>

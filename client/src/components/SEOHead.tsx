@@ -105,7 +105,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="language" content="English" />
-      <meta name="theme-color" content="#0066FF" />
+      <meta name="theme-color" content="#F25C23" />
       
       {/* Time-based Meta Tags */}
       {publishedTime && <meta property="article:published_time" content={publishedTime} />}
