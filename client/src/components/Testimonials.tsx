@@ -52,17 +52,17 @@ const Testimonials: React.FC = () => {
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="w-8 h-8 bg-[#F25C23] rounded-full flex items-center justify-center">
-              <span className="block w-3 h-3 bg-black rounded-full"></span>
+              <div className="w-8 h-8 bg-[#F25C23] rounded-full flex items-center justify-center">
+                <span className="block w-3 h-3 bg-black rounded-full"></span>
+              </div>
+              <span className="uppercase text-sm font-bold tracking-widest text-[#F25C23] font-sans">TESTIMONIALS</span>
             </div>
-            <span className="uppercase text-sm font-bold tracking-widest text-[#F25C23]">TESTIMONIALS</span>
-          </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#DEDEDE] mb-6 leading-tight">
-            What Our <span className="text-[#F25C23]">Clients</span> Say
-          </h2>
-          <p className="text-[#DEDEDE]/80 max-w-3xl mx-auto text-lg leading-relaxed">
-            Real success stories from businesses that transformed their digital presence with our innovative solutions.
-          </p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#DEDEDE] mb-6 leading-tight font-display">
+              What Our <span className="text-[#F25C23]">Clients</span> Say
+            </h2>
+            <p className="text-[#DEDEDE]/80 max-w-3xl mx-auto text-lg leading-relaxed font-sans">
+              Real success stories from businesses that transformed their digital presence with our innovative solutions.
+            </p>
         </motion.div>
 
         {/* Testimonials Grid */}
@@ -121,22 +121,22 @@ const Testimonials: React.FC = () => {
                       />
                     </svg>
                   </div>
-                  <p className={`text-center text-base leading-relaxed italic ${
-                    idx === 1 ? 'text-[#DEDEDE]' : 'text-[#DEDEDE]/90'
-                  }`}>
-                    {item.testimonial}
-                  </p>
-                </div>
-                
-                {/* Author info */}
-                <div className="text-center border-t border-[#DEDEDE]/10 pt-6">
-                  <div className={`font-black text-xl mb-1 ${idx === 1 ? 'text-[#DEDEDE]' : 'text-[#DEDEDE]'}`}>
-                    {item.name}
+                  <p className={`text-center text-base leading-relaxed italic font-sans ${
+                      idx === 1 ? 'text-[#DEDEDE]' : 'text-[#DEDEDE]/90'
+                    }`}>
+                      {item.testimonial}
+                    </p>
                   </div>
-                  <div className={`text-sm font-medium ${idx === 1 ? 'text-[#F25C23]' : 'text-[#F25C23]/80'}`}>
-                    {item.role}
+                  
+                  {/* Author info */}
+                  <div className="text-center border-t border-[#DEDEDE]/10 pt-6">
+                    <div className={`font-black text-xl mb-1 font-display ${idx === 1 ? 'text-[#DEDEDE]' : 'text-[#DEDEDE]'}`}>
+                      {item.name}
+                    </div>
+                    <div className={`text-sm font-medium font-sans ${idx === 1 ? 'text-[#F25C23]' : 'text-[#F25C23]/80'}`}>
+                      {item.role}
+                    </div>
                   </div>
-                </div>
               </div>
             </motion.div>
           ))}

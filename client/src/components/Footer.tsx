@@ -24,9 +24,9 @@ const Footer: React.FC = () => {
               className="flex items-center space-x-2 mb-6"
             >
               <div className="w-10 h-10 bg-[#4D4D4D] rounded-xl flex items-center justify-center">
-<span className="text-xl font-bold text-[#DEDEDE]">Z</span>
+<span className="text-xl font-bold text-[#DEDEDE] font-display">Z</span>
               </div>
-              <span className="text-2xl font-bold text-[#DEDEDE]">
+              <span className="text-2xl font-bold text-[#DEDEDE] font-display">
                 ZEN<span className="text-[#F25C23]">KO</span>
               </span>
             </motion.div>
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-[#DEDEDE]/80 mb-8 max-w-md text-base leading-relaxed"
+              className="text-[#DEDEDE]/80 mb-8 max-w-md text-base leading-relaxed font-sans"
             >
 Empowering businesses with innovative digital solutions that transform visions into reality. We combine creativity, strategy, and cutting-edge technology to deliver exceptional results.
             </motion.p>
@@ -87,8 +87,8 @@ className="w-10 h-10 bg-[#4D4D4D] rounded-xl flex items-center justify-center ho
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-bold mb-6 text-[#DEDEDE] text-xl">Services</h4>
-            <ul className="space-y-3 text-[#DEDEDE]/70">
+            <h4 className="font-bold mb-6 text-[#DEDEDE] text-xl font-display">Services</h4>
+            <ul className="space-y-3 text-[#DEDEDE]/70 font-sans">
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
@@ -143,8 +143,8 @@ className="hover:text-[#F25C23] transition-colors text-left text-sm"
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-bold mb-6 text-[#DEDEDE] text-xl">Quick Links</h4>
-            <ul className="space-y-3 text-[#DEDEDE]/70">
+            <h4 className="font-bold mb-6 text-[#DEDEDE] text-xl font-display">Quick Links</h4>
+            <ul className="space-y-3 text-[#DEDEDE]/70 font-sans">
               <li>
                 <button
                   onClick={() => scrollToSection('about')}
@@ -197,9 +197,9 @@ className="hover:text-[#F25C23] transition-colors text-left text-sm"
           viewport={{ once: true }}
           className="border-t-2 border-[#4D4D4D] mt-10 pt-6 text-center text-[#DEDEDE]/60 text-sm"
         >
-          <p className="text-base">
-            © 2024 <span className="text-[#F25C23] font-bold">Zenko Digital</span>. All rights reserved. Built with <span className="text-[#F25C23]">❤️</span> for the digital future.
-          </p>
+          <p className="text-base font-sans">
+              © 2024 <span className="text-[#F25C23] font-bold">Zenko Digital</span>. All rights reserved. Built with <span className="text-[#F25C23]">❤️</span> for the digital future.
+            </p>
         </motion.div>
       </div>
     </footer>

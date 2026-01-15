@@ -61,16 +61,16 @@ const About: React.FC = () => {
           {/* Left Column */}
           <div className="lg:pr-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 bg-[#F25C23] rounded-full flex items-center justify-center">
-                <div className="w-3 h-3 bg-[#171717] rounded-full" />
+                <div className="w-8 h-8 bg-[#F25C23] rounded-full flex items-center justify-center">
+                  <div className="w-3 h-3 bg-[#171717] rounded-full" />
+                </div>
+                <span className="uppercase text-sm font-bold tracking-widest text-[#F25C23] font-sans">WHO WE ARE</span>
               </div>
-              <span className="uppercase text-sm font-bold tracking-widest text-[#F25C23]">WHO WE ARE</span>
-            </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] mb-8 text-[#DEDEDE] uppercase">
-              Creativity<br />
-              <span className="text-[#F25C23]">meets</span> strategy.
-            </h2>
-            <p className="text-[#DEDEDE]/90 text-lg leading-relaxed mb-8">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] mb-8 text-[#DEDEDE] uppercase font-display">
+                Creativity<br />
+                <span className="text-[#F25C23]">meets</span> strategy.
+              </h2>
+              <p className="text-[#DEDEDE]/90 text-lg leading-relaxed mb-8 font-sans">
               With a team of passionate designers, marketers, and innovators, we specialize in delivering unique solutions that elevate your brand and captivate your audience in the digital landscape.
             </p>
             {/* Experience Highlights */}
@@ -79,30 +79,30 @@ const About: React.FC = () => {
                 <div className="w-14 h-14 rounded-xl bg-[#F25C23] flex items-center justify-center text-2xl">
                   <span role="img" aria-label="brain">🧠</span>
                 </div>
-                <div>
-                  <span className="font-black text-lg text-[#DEDEDE] block">
-                    10+ Years Experience
-                  </span>
-                  <span className="text-[#DEDEDE]/60 text-sm">
-                    Delivering excellence since 2014
-                  </span>
+                  <div>
+                    <span className="font-black text-lg text-[#DEDEDE] block font-display">
+                      10+ Years Experience
+                    </span>
+                    <span className="text-[#DEDEDE]/60 text-sm font-sans">
+                      Delivering excellence since 2014
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-center gap-4 p-4 rounded-xl bg-[#4D4D4D] hover:bg-[#4D4D4D] transition-colors duration-300">
-                <div className="w-14 h-14 rounded-xl bg-[#4D4D4D] flex items-center justify-center text-2xl" style={{animationDelay: '0.2s'}}>
-                  <span role="img" aria-label="megaphone">📣</span>
-                </div>
-                <div>
-                  <span className="font-black text-lg text-[#DEDEDE] block">
-                    Global Brand Trust
-                  </span>
-                  <span className="text-[#DEDEDE]/60 text-sm">
-                    Partners worldwide choose us
-                  </span>
+                <div className="flex items-center gap-4 p-4 rounded-xl bg-[#4D4D4D] hover:bg-[#4D4D4D] transition-colors duration-300">
+                  <div className="w-14 h-14 rounded-xl bg-[#4D4D4D] flex items-center justify-center text-2xl" style={{animationDelay: '0.2s'}}>
+                    <span role="img" aria-label="megaphone">📣</span>
+                  </div>
+                  <div>
+                    <span className="font-black text-lg text-[#DEDEDE] block font-display">
+                      Global Brand Trust
+                    </span>
+                    <span className="text-[#DEDEDE]/60 text-sm font-sans">
+                      Partners worldwide choose us
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
           {/* Right Column: Image and Stats */}
           <div className="relative flex flex-col mt-4 lg:mt-0">
             {/* Main Image with enhanced styling */}
@@ -133,10 +133,10 @@ const About: React.FC = () => {
                   </div>
                   <div className="flex-1">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="font-bold text-[#DEDEDE] text-sm uppercase tracking-wider">
+                      <span className="font-bold text-[#DEDEDE] text-sm uppercase tracking-wider font-sans">
                         Successful Campaign Launches
                       </span>
-                      <span className="font-black text-lg text-[#F25C23]">95%</span>
+                      <span className="font-black text-lg text-[#F25C23] font-display">95%</span>
                     </div>
                     <div className="w-full bg-[#171717] rounded-full h-2">
                       <div className="bg-[#F25C23] h-2 rounded-full transition-all duration-1000" style={{ width: '95%' }} />
@@ -150,10 +150,10 @@ const About: React.FC = () => {
                   </div>
                   <div className="flex-1">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="font-bold text-[#DEDEDE] text-sm uppercase tracking-wider">
+                      <span className="font-bold text-[#DEDEDE] text-sm uppercase tracking-wider font-sans">
                         Innovative Design Solutions
                       </span>
-                      <span className="font-black text-lg text-[#F25C23]">92%</span>
+                      <span className="font-black text-lg text-[#F25C23] font-display">92%</span>
                     </div>
                     <div className="w-full bg-[#171717] rounded-full h-2">
                       <div className="bg-[#F25C23] h-2 rounded-full transition-all duration-1000" style={{ width: '92%' }} />
@@ -167,10 +167,10 @@ const About: React.FC = () => {
                   </div>
                   <div className="flex-1">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="font-bold text-[#DEDEDE] text-sm uppercase tracking-wider">
+                      <span className="font-bold text-[#DEDEDE] text-sm uppercase tracking-wider font-sans">
                         Client Satisfaction Rate
                       </span>
-                      <span className="font-black text-lg text-[#F25C23]">98%</span>
+                      <span className="font-black text-lg text-[#F25C23] font-display">98%</span>
                     </div>
                     <div className="w-full bg-[#171717] rounded-full h-2">
                       <div className="bg-[#DEDEDE] h-2 rounded-full transition-all duration-1000" style={{ width: '98%' }} />
@@ -179,11 +179,11 @@ const About: React.FC = () => {
                 </div>
               </div>
               
-              <p className="text-[#DEDEDE]/80 text-base leading-relaxed">
+              <p className="text-[#DEDEDE]/80 text-base leading-relaxed font-sans">
                 Our commitment to excellence drives us to continuously innovate and exceed expectations, creating digital experiences that resonate with audiences worldwide.
               </p>
               
-              <button className="px-8 py-4 bg-transparent border-2 border-[#F25C23] rounded-full text-[#F25C23] font-bold uppercase text-sm hover:bg-[#F25C23] hover:text-[#171717] transition-all duration-300 tracking-wider transform hover:scale-105">
+              <button className="px-8 py-4 bg-transparent border-2 border-[#F25C23] rounded-full text-[#F25C23] font-bold uppercase text-sm font-sans hover:bg-[#F25C23] hover:text-[#171717] transition-all duration-300 tracking-wider transform hover:scale-105">
                 Learn More About Us
               </button>
             </div>

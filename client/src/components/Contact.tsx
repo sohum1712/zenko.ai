@@ -48,22 +48,22 @@ const Contact: React.FC = () => {
       <section className="relative py-20 bg-[#171717] overflow-hidden rounded-t-[4rem] min-h-[60vh]">
         <div className="absolute -top-20 -right-28 w-[500px] h-[500px] rounded-full bg-[#F25C23] opacity-20 blur-[120px]"></div>
         <div className="relative container mx-auto px-6 text-center z-10 max-w-4xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold mb-6 text-[#DEDEDE] tracking-tight"
-          >
-            Ready to Transform Your Business?
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-xl text-[#F25C23] mb-12 max-w-3xl mx-auto"
-          >
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-6xl font-bold mb-6 text-[#DEDEDE] tracking-tight font-display"
+            >
+              Ready to Transform Your Business?
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-xl text-[#F25C23] mb-12 max-w-3xl mx-auto font-sans"
+            >
             Join hundreds of successful businesses that chose Zenko for their digital transformation journey
           </motion.p>
           <motion.div
@@ -74,22 +74,22 @@ const Contact: React.FC = () => {
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           >
             <motion.button
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-[#F25C23] hover:opacity-90 text-[#171717] px-10 py-4 rounded-full text-xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl group flex items-center justify-center gap-3"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              data-testid="cta-free-quote-now"
-            >
-              <Gift size={24} className="text-[#171717]" />
-              Get Free Quote Now
-            </motion.button>
-            <motion.button
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-[#4D4D4D] hover:opacity-90 text-[#F25C23] px-10 py-4 rounded-full text-xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl group flex items-center justify-center gap-3"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              data-testid="cta-schedule-call"
-            >
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-[#F25C23] hover:opacity-90 text-[#171717] px-10 py-4 rounded-full text-xl font-semibold font-sans transition-all duration-300 shadow-xl hover:shadow-2xl group flex items-center justify-center gap-3"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                data-testid="cta-free-quote-now"
+              >
+                <Gift size={24} className="text-[#171717]" />
+                Get Free Quote Now
+              </motion.button>
+              <motion.button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-[#4D4D4D] hover:opacity-90 text-[#F25C23] px-10 py-4 rounded-full text-xl font-semibold font-sans transition-all duration-300 shadow-xl hover:shadow-2xl group flex items-center justify-center gap-3"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                data-testid="cta-schedule-call"
+              >
               <Phone size={24} className="text-[#F25C23]" />
               Schedule Call
             </motion.button>
@@ -117,10 +117,10 @@ const Contact: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-6xl font-bold mb-6 text-[#DEDEDE]">
-                Let's Build Something Amazing Together
-              </h2>
-              <p className="text-xl text-[#DEDEDE] max-w-3xl mx-auto">
+              <h2 className="text-4xl md:text-6xl font-bold mb-6 text-[#DEDEDE] font-display">
+                  Let's Build Something Amazing Together
+                </h2>
+                <p className="text-xl text-[#DEDEDE] max-w-3xl mx-auto font-sans">
                 Ready to take your business online? Get in touch with our team and let's discuss your project!
               </p>
             </motion.div>
@@ -134,13 +134,13 @@ const Contact: React.FC = () => {
               >
                 <Card className="floating-card bg-[#171717] rounded-2xl border border-[#4D4D4D]">
                   <CardContent className="p-8">
-                    <h3 className="text-2xl font-bold mb-6 text-[#F25C23]">
-                      Send us a message
-                    </h3>
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid md:grid-cols-2 gap-6">
-                        <div>
-                          <label className="block text-sm font-medium mb-2 text-[#F25C23]">
+                    <h3 className="text-2xl font-bold mb-6 text-[#F25C23] font-display">
+                        Send us a message
+                      </h3>
+                      <form onSubmit={handleSubmit} className="space-y-6">
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <div>
+                            <label className="block text-sm font-medium mb-2 text-[#F25C23] font-sans">
                             Full Name
                           </label>
                           <Input
@@ -153,9 +153,9 @@ const Contact: React.FC = () => {
                           />
                         </div>
                         <div>
-                          <label className="block text-sm font-medium mb-2 text-[#F25C23]">
-                            Phone Number (WhatsApp)
-                          </label>
+                            <label className="block text-sm font-medium mb-2 text-[#F25C23] font-sans">
+                              Phone Number (WhatsApp)
+                            </label>
                           <Input
                             type="tel"
                             value={formData.phone}
@@ -167,9 +167,9 @@ const Contact: React.FC = () => {
                         </div>
                       </div>
                       <div>
-                        <label className="block text-sm font-medium mb-2 text-[#F25C23]">
-                          Project Details
-                        </label>
+                          <label className="block text-sm font-medium mb-2 text-[#F25C23] font-sans">
+                            Project Details
+                          </label>
                         <Textarea
                           rows={4}
                           value={formData.message}

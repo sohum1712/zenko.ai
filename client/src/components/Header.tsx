@@ -7,15 +7,15 @@ const Header = () => {
   return (
     <header className="bg-[#171717] border-b-4 border-[#F25C23] px-4 sm:px-6 py-4 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo and Brand */}
-        <div className="flex items-center gap-3">
-          <img src="/zenko-logo.png" alt="Zenko" className="h-8 w-auto hidden sm:block" />
-          <span className="text-lg sm:text-xl font-extrabold text-[#DEDEDE] tracking-tight">ZENKO</span>
-        </div>
-        
-        {/* Desktop Navigation */}
-        <nav className="hidden md:block">
-          <ul className="flex items-center gap-6 text-sm lg:text-base font-bold">
+          {/* Logo and Brand */}
+          <div className="flex items-center gap-3">
+            <img src="/zenko-logo.png" alt="Zenko" className="h-8 w-auto hidden sm:block" />
+            <span className="text-lg sm:text-xl font-extrabold text-[#DEDEDE] tracking-tight font-display">ZENKO</span>
+          </div>
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:block">
+            <ul className="flex items-center gap-6 text-sm lg:text-base font-bold font-sans">
             <li><a href="#home" className="text-[#F25C23] hover:text-[#DEDEDE] transition-colors duration-300">HOME</a></li>
             <li><a href="#about" className="text-[#DEDEDE] hover:text-[#F25C23] transition-colors duration-300">ABOUT US</a></li>
             <li><a href="#services" className="text-[#DEDEDE] hover:text-[#F25C23] transition-colors duration-300">SERVICES</a></li>
@@ -24,11 +24,11 @@ const Header = () => {
           </ul>
         </nav>
         
-        {/* Desktop CTA Button */}
-        <a
-          href="#contact"
-          className="hidden md:block bg-[#F25C23] text-[#171717] px-5 py-2 rounded-full font-bold hover:bg-[#DEDEDE] hover:text-[#171717] transition-all duration-300 transform hover:scale-105"
-        >
+          {/* Desktop CTA Button */}
+          <a
+            href="#contact"
+            className="hidden md:block bg-[#F25C23] text-[#171717] px-5 py-2 rounded-full font-bold font-sans hover:bg-[#DEDEDE] hover:text-[#171717] transition-all duration-300 transform hover:scale-105"
+          >
           Contact
         </a>
         

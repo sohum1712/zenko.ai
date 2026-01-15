@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center min-h-[65vh]">
           {/* Left: intro text and stats */}
           <div className="lg:col-span-1 space-y-8 animate-slide-in-left">
-            <p className="text-[#F25C23] uppercase tracking-widest font-bold text-sm leading-relaxed">
+            <p className="text-[#F25C23] uppercase tracking-widest font-bold text-sm leading-relaxed font-sans">
               {audience.isGujarati ? 'અમારી ટીમ દરેક પ્રોજેક્ટમાં સર્જનાત્મકતા લાવે છે.' : 'THE EXPERT TEAM BRINGS CREATIVITY TO EVERY PROJECT.'}
             </p>
             
@@ -68,18 +68,18 @@ const Hero: React.FC = () => {
 
           {/* Center: big title + image */}
           <div className="lg:col-span-1 flex flex-col items-center justify-center space-y-8 animate-fade-in-up">
-            <div className="text-center relative">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black text-[#DEDEDE] leading-none mb-2">
-                CREATIVE
-              </h1>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black text-[#F25C23] leading-none relative z-10">
-                AGENCY
-              </h1>
-              {/* Subtle background text */}
-              <div className="absolute inset-0 text-[#DEDEDE]/5 text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black -z-10 transform rotate-12 translate-x-4 translate-y-4">
-                CREATIVE
+              <div className="text-center relative">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black text-[#DEDEDE] leading-none mb-2">
+                  CREATIVE
+                </h1>
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black text-[#F25C23] leading-none relative z-10">
+                  AGENCY
+                </h1>
+                {/* Subtle background text */}
+                <div className="absolute inset-0 text-[#DEDEDE]/5 text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-black -z-10 transform rotate-12 translate-x-4 translate-y-4">
+                  CREATIVE
+                </div>
               </div>
-            </div>
 
             {/* Hero Image */}
             <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[26rem] lg:h-[26rem] overflow-visible -mt-10">
@@ -109,23 +109,23 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Right: description + buttons */}
-            <div className="lg:col-span-1 space-y-8 animate-slide-in-right" style={{bottom: '3'}}>
-            <p className="text-[#DEDEDE]/90 text-base leading-relaxed">
-              {audience.isGujarati
-                ? 'અમે ગુજરાતી વ્યવસાયો માટે ઉપયુક્ત ડિજિટલ સોલ્યુશન્સ બનાવીએ છીએ — વેબસાઇટ, બ્રાન્ડિંગ અને માર્કેટિંગ જે ખરેખર પરિણામ આપે.'
-                : 'We create innovative digital solutions that transform your business vision into reality. Our expert team combines creativity with strategy to deliver exceptional results.'}
-            </p>
-            
-            <div className="space-y-4">
-              <button className="bg-[#4D4D4D] text-[#DEDEDE] px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105">
-                {audience.primaryCTA}
-              </button>
+              <div className="lg:col-span-1 space-y-8 animate-slide-in-right" style={{bottom: '3'}}>
+              <p className="text-[#DEDEDE]/90 text-base leading-relaxed font-sans">
+                {audience.isGujarati
+                  ? 'અમે ગુજરાતી વ્યવસાયો માટે ઉપયુક્ત ડિજિટલ સોલ્યુશન્સ બનાવીએ છીએ — વેબસાઇટ, બ્રાન્ડિંગ અને માર્કેટિંગ જે ખરેખર પરિણામ આપે.'
+                  : 'We create innovative digital solutions that transform your business vision into reality. Our expert team combines creativity with strategy to deliver exceptional results.'}
+              </p>
+              
+              <div className="space-y-4">
+                <button className="bg-[#4D4D4D] text-[#DEDEDE] px-8 py-4 rounded-full font-bold text-lg font-sans hover:opacity-90 transition-all duration-300 transform hover:scale-105">
+                  {audience.primaryCTA}
+                </button>
               
               <div className="flex items-center space-x-4">
                 <button className="w-16 h-16 bg-[#F25C23] rounded-full flex items-center justify-center hover-scale group">
                   <Play className="w-6 h-6 text-[#171717] ml-1 group-hover:scale-110 transition-transform" />
                 </button>
-                <span className="text-[#DEDEDE]/90 text-sm font-medium">Watch Our Story</span>
+                <span className="text-[#DEDEDE]/90 text-sm font-medium font-sans">Watch Our Story</span>
               </div>
             </div>
             
@@ -151,15 +151,15 @@ const Hero: React.FC = () => {
                 className="flex items-center whitespace-nowrap"
               >
                 {marqueeContent.map((word, idx) => (
-                  <span
-                    key={idx}
-                    className={`mx-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-widest ${
-                      word === '+' ? 'text-[#4D4D4D]' : 'text-[#171717]'
-                    }`}
-                  >
-                    {word}
-                  </span>
-                ))}
+                    <span
+                      key={idx}
+                      className={`mx-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black uppercase tracking-widest ${
+                        word === '+' ? 'text-[#4D4D4D]' : 'text-[#171717]'
+                      }`}
+                    >
+                      {word}
+                    </span>
+                  ))}
               </Marquee>
             </div>
           </div>

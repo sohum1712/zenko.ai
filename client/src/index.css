@@ -1,4 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: local('Helvetica Neue Condensed Black'), local('HelveticaNeue-CondensedBlack'), local('Helvetica Neue'), local('HelveticaNeue');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Deviantly Brush';
+  src: local('Deviantly Brush'), local('DeviantlyBrush');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
@@ -37,9 +53,9 @@
   --radius: 0.5rem;
   
   /* Typography */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-serif: 'Merriweather', Georgia, serif;
+  --font-sans: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Helvetica Neue', 'Arial Black', sans-serif;
+  --font-accent: 'Deviantly Brush', cursive;
   --font-mono: 'Fira Code', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   
   /* Shadows */
@@ -187,6 +203,10 @@
   
   .font-display {
     font-family: var(--font-display);
+  }
+  
+  .font-accent {
+    font-family: var(--font-accent);
   }
   
   .text-outline {

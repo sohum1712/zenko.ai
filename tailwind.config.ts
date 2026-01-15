@@ -107,12 +107,12 @@ export default {
           ring: "var(--sidebar-ring)",
         },
       },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-        display: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
-        serif: ['Merriweather', 'Georgia', 'serif'],
-        mono: ['Fira Code', 'Menlo', 'monospace'],
-      },
+        fontFamily: {
+          sans: ['Archivo', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          display: ['Helvetica Neue', 'Arial Black', 'system-ui', 'sans-serif'],
+          accent: ['Deviantly Brush', 'cursive'],
+          mono: ['Fira Code', 'Menlo', 'monospace'],
+        },
       spacing: {
         '128': '32rem',
         '144': '36rem',
