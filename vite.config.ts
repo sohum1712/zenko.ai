@@ -13,16 +13,13 @@ export default defineConfig({
       "@assets": path.resolve(process.cwd(), "attached_assets"),
     },
   },
-  optimizeDeps: {
-    include: ["framer-motion", "lucide-react", "wouter", "@tanstack/react-query"],
-  },
   root: path.resolve(process.cwd(), "client"),
   build: {
     outDir: path.resolve(process.cwd(), "dist/public"),
     emptyOutDir: true,
   },
   server: {
-    port: 5173,
+    port: 5173, // Client development port
     fs: {
       strict: true,
       deny: ["**/.*"],

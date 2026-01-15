@@ -1,120 +1,83 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from "wouter";
-import { cn } from "@/lib/utils";
-import { Menu, X, ArrowRight } from "lucide-react";
+
+import React from 'react';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Contact', href: '#contact' },
-  ];
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <header 
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-6 py-4",
-        isScrolled 
-          ? "bg-background/80 backdrop-blur-md border-b border-border py-3 shadow-lg" 
-          : "bg-transparent py-5"
-      )}
-    >
+    <header className="bg-[#171717] border-b-4 border-[#F25C23] px-4 sm:px-6 py-4 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo and Brand */}
-        <Link href="/">
-          <div className="flex items-center gap-3 cursor-pointer group">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-              <span className="text-primary-foreground font-black text-xl italic">Z</span>
-            </div>
-            <span className="text-xl sm:text-2xl font-black tracking-tighter text-foreground group-hover:text-accent transition-colors">
-              ZENKO<span className="text-accent">.</span>AI
-            </span>
-          </div>
-        </Link>
+        <div className="flex items-center gap-3">
+          <img src="/zenko-logo.png" alt="Zenko" className="h-8 w-auto hidden sm:block" />
+          <span className="text-lg sm:text-xl font-extrabold text-[#DEDEDE] tracking-tight">ZENKO</span>
+        </div>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
-          <ul className="flex items-center gap-8">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <a 
-                  href={link.href} 
-                  className="text-sm font-semibold tracking-wide uppercase text-foreground/70 hover:text-accent transition-colors duration-200 relative group"
-                >
-                  {link.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              </li>
-            ))}
+          <ul className="flex items-center gap-6 text-sm lg:text-base font-bold">
+            <li><a href="#home" className="text-[#F25C23] hover:text-[#DEDEDE] transition-colors duration-300">HOME</a></li>
+            <li><a href="#about" className="text-[#DEDEDE] hover:text-[#F25C23] transition-colors duration-300">ABOUT US</a></li>
+            <li><a href="#services" className="text-[#DEDEDE] hover:text-[#F25C23] transition-colors duration-300">SERVICES</a></li>
+            <li><a href="#portfolio" className="text-[#DEDEDE] hover:text-[#F25C23] transition-colors duration-300">PORTFOLIO</a></li>
+            <li><a href="#contact" className="text-[#DEDEDE] hover:text-[#F25C23] transition-colors duration-300">CONTACT</a></li>
           </ul>
         </nav>
         
         {/* Desktop CTA Button */}
-        <div className="hidden md:flex items-center gap-4">
-          <a
-            href="#contact"
-            className="group btn btn-accent px-6 py-2.5 flex items-center gap-2"
-          >
-            Start Project
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </div>
+        <a
+          href="#contact"
+          className="hidden md:block bg-[#F25C23] text-[#171717] px-5 py-2 rounded-full font-bold hover:bg-[#DEDEDE] hover:text-[#171717] transition-all duration-300 transform hover:scale-105"
+        >
+          Contact
+        </a>
         
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden p-2 text-foreground hover:bg-muted rounded-full transition-colors"
+          className="md:hidden text-[#DEDEDE] hover:text-[#F25C23] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#F25C23] focus:ring-offset-2 focus:ring-offset-[#171717]"
           aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
         >
-          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {isMenuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
         </button>
       </div>
       
       {/* Mobile Menu */}
-      <div 
-        className={cn(
-          "fixed inset-0 bg-background/95 backdrop-blur-lg z-[-1] md:hidden transition-all duration-500 ease-in-out transform",
-          isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
-        )}
-      >
-        <nav className="h-full flex flex-col justify-center items-center gap-8 px-6 pt-20">
-          <ul className="flex flex-col items-center gap-8 w-full">
-            {navLinks.map((link) => (
-              <li key={link.name} className="w-full text-center">
-                <a 
-                  href={link.href} 
-                  onClick={() => setIsMenuOpen(false)} 
-                  className="text-3xl font-bold text-foreground hover:text-accent transition-colors block py-2"
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <div className="w-full max-w-xs mt-8">
-            <a
-              href="#contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="btn btn-primary w-full py-4 text-xl"
-            >
-              GET STARTED
-            </a>
-          </div>
-        </nav>
-      </div>
+      {isMenuOpen && (
+        <div 
+          id="mobile-navigation" 
+          className="md:hidden bg-[#171717] border-t border-[#4D4D4D] mt-4 py-4"
+          role="navigation"
+          aria-label="Mobile navigation menu"
+        >
+          <nav>
+            <ul className="flex flex-col gap-4 px-4">
+              <li><a href="#home" onClick={() => setIsMenuOpen(false)} className="block text-[#F25C23] hover:text-[#DEDEDE] transition-colors duration-300 py-2">HOME</a></li>
+              <li><a href="#about" onClick={() => setIsMenuOpen(false)} className="block text-[#DEDEDE] hover:text-[#F25C23] transition-colors duration-300 py-2">ABOUT US</a></li>
+              <li><a href="#services" onClick={() => setIsMenuOpen(false)} className="block text-[#DEDEDE] hover:text-[#F25C23] transition-colors duration-300 py-2">SERVICES</a></li>
+              <li><a href="#portfolio" onClick={() => setIsMenuOpen(false)} className="block text-[#DEDEDE] hover:text-[#F25C23] transition-colors duration-300 py-2">PORTFOLIO</a></li>
+              <li><a href="#contact" onClick={() => setIsMenuOpen(false)} className="block text-[#DEDEDE] hover:text-[#F25C23] transition-colors duration-300 py-2">CONTACT</a></li>
+            </ul>
+            <div className="px-4 mt-4">
+              <a
+                href="#contact"
+                onClick={() => setIsMenuOpen(false)}
+                className="block w-full text-center bg-[#F25C23] text-[#171717] px-5 py-2 rounded-full font-bold hover:bg-[#DEDEDE] hover:text-[#171717] transition-all duration-300"
+              >
+                GET STARTED
+              </a>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
