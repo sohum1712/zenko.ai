@@ -1,68 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* Brand palette (from user image) */
-  --brand-black: #171717;
-  --brand-orange: #F25C23;
-  --brand-dark-gray: #4D4D4D;
-  --brand-light-gray: #DEDEDE;
-
-  /* Back-compat mapped tokens (kept so existing code keeps working) */
-  --background: var(--brand-black);
-  --foreground: var(--brand-light-gray);
-  --card: var(--brand-dark-gray);
-  --card-foreground: var(--brand-light-gray);
-  --popover: var(--brand-dark-gray);
-  --popover-foreground: var(--brand-light-gray);
-  --primary: var(--brand-orange);
-  --primary-foreground: var(--brand-black);
-  --secondary: var(--brand-dark-gray);
-  --secondary-foreground: var(--brand-light-gray);
-  --muted: var(--brand-dark-gray);
-  --muted-foreground: var(--brand-light-gray);
-  --accent: var(--brand-orange);
-  --accent-foreground: var(--brand-black);
-  --destructive: #F25C23; /* reuse orange as only accent */
-  --destructive-foreground: var(--brand-black);
-  --border: var(--brand-dark-gray);
-  --input: var(--brand-dark-gray);
-  --ring: var(--brand-orange);
-
-  /* Typography */
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-serif: Georgia, serif;
-  --font-mono: Menlo, monospace;
-
-  /* Spacing and effects */
+  /* Modern Professional Color Palette */
+  --primary: #1A365D;        /* Deep Navy */
+  --primary-light: #2C5282;  /* Lighter Navy */
+  --primary-dark: #0F1E3D;   /* Darker Navy */
+  --secondary: #2D3748;      /* Dark Gray */
+  --secondary-light: #4A5568; /* Medium Gray */
+  --secondary-dark: #1A202C; /* Charcoal */
+  --accent: #3182CE;         /* Vibrant Blue */
+  --accent-light: #63B3ED;   /* Light Blue */
+  --accent-dark: #2C5282;    /* Dark Blue */
+  --neutral: #E2E8F0;        /* Light Gray */
+  --neutral-light: #F7FAFC;  /* Off-White */
+  --neutral-dark: #A0AEC0;   /* Medium Gray */
+  --success: #38A169;        /* Green */
+  --warning: #DD6B20;        /* Orange */
+  --error: #E53E3E;          /* Red */
+  
+  /* Backward compatibility */
+  --background: #FFFFFF;
+  --foreground: #1A202C;
+  --card: #FFFFFF;
+  --card-foreground: #1A202C;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A202C;
+  --muted: #F7FAFC;
+  --muted-foreground: #718096;
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #3182CE;
   --radius: 0.5rem;
-  --shadow-2xs: 0 1px 1px rgba(0,0,0,0.15);
-  --shadow-xs: 0 1px 2px rgba(0,0,0,0.15);
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
-  --shadow: 0 2px 4px rgba(0,0,0,0.2);
-  --shadow-md: 0 3px 6px rgba(0,0,0,0.25);
-  --shadow-lg: 0 6px 12px rgba(0,0,0,0.3);
-  --shadow-xl: 0 10px 20px rgba(0,0,0,0.35);
-  --shadow-2xl: 0 14px 28px rgba(0,0,0,0.4);
-  --tracking-normal: 0em;
-  --spacing: 0.25rem;
+  
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: 'Merriweather', Georgia, serif;
+  --font-mono: 'Fira Code', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 }
 
-.light-mode {
-  --background: hsl(210, 40%, 98%);
-  --foreground: hsl(222, 84%, 5%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(222, 84%, 5%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(222, 84%, 5%);
-  --muted: hsl(210, 40%, 96%);
-  --muted-foreground: hsl(215, 16%, 47%);
-  --border: hsl(214, 32%, 91%);
-  --input: hsl(214, 32%, 91%);
+/* Dark mode support */
+.dark {
+  --background: #1A202C;
+  --foreground: #F7FAFC;
+  --card: #1A202C;
+  --card-foreground: #F7FAFC;
+  --popover: #1A202C;
+  --popover-foreground: #F7FAFC;
+  --muted: #2D3748;
+  --muted-foreground: #A0AEC0;
+  --border: #2D3748;
+  --input: #2D3748;
+  --ring: #4299E1;
 }
 
 @layer base {
@@ -71,33 +73,89 @@
   }
 
   html {
+    @apply font-sans text-base antialiased text-gray-900 bg-white;
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
-    background-color: var(--brand-black);
-    color: var(--brand-light-gray);
+    @apply min-h-screen bg-white text-gray-900 transition-colors duration-200;
+    font-feature-settings: 'rlig' 1, 'calt' 1, 'ss01' 1;
     overflow-x: hidden;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight text-gray-900 dark:text-white;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-bold leading-snug;
+  }
+
+  p {
+    @apply text-base md:text-lg leading-relaxed text-gray-600 dark:text-gray-300;
+  }
+
+  /* Links */
+  a {
+    @apply text-accent hover:text-accent-dark transition-colors duration-200;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary-dark;
+  }
+
+  .btn-outline {
+    @apply border-2 border-gray-300 text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700;
+  }
+
+  /* Forms */
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='number'],
+  input[type='tel'],
+  input[type='url'],
+  input[type='date'],
+  input[type='datetime-local'],
+  input[type='month'],
+  input[type='week'],
+  input[type='time'],
+  textarea,
+  select {
+    @apply w-full px-4 py-2 text-base border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-accent focus:border-accent;
   }
 
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    @apply w-2 h-2;
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--brand-dark-gray);
+    @apply bg-gray-100 dark:bg-gray-800;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--brand-orange);
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--brand-orange);
+    @apply bg-gray-300 dark:bg-gray-600 rounded-full hover:bg-gray-400 dark:hover:bg-gray-500;
   }
 }
 

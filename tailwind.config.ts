@@ -6,21 +6,54 @@ export default {
   theme: {
     extend: {
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "0.5rem",
+        md: "0.375rem",
+        sm: "0.25rem",
       },
       colors: {
-        // Zenko Brand Colors
-        'zenko-blue': 'var(--zenko-blue)',
-        'zenko-blue-dark': 'var(--zenko-blue-dark)',
-        'zenko-neon-green': 'var(--zenko-neon-green)',
-        'zenko-neon-green-dark': 'var(--zenko-neon-green-dark)',
-        'zenko-dark-gray': 'var(--zenko-dark-gray)',
-        'zenko-black': 'var(--zenko-black)',
-        'zenko-white': 'var(--zenko-white)',
-        'zenko-orange': 'var(--zenko-orange)',
-        'zenko-yellow': 'var(--zenko-yellow)',
+        // Modern Professional Color Palette
+        primary: {
+          DEFAULT: '#1A365D',    // Deep Navy
+          light: '#2C5282',     // Lighter Navy
+          dark: '#0F1E3D',      // Darker Navy
+          contrast: '#FFFFFF'    // White text for contrast
+        },
+        secondary: {
+          DEFAULT: '#2D3748',   // Dark Gray
+          light: '#4A5568',     // Medium Gray
+          dark: '#1A202C',      // Charcoal
+          contrast: '#FFFFFF'    // White text for contrast
+        },
+        accent: {
+          DEFAULT: '#3182CE',   // Vibrant Blue
+          light: '#63B3ED',     // Light Blue
+          dark: '#2C5282',      // Dark Blue
+          contrast: '#FFFFFF'    // White text for contrast
+        },
+        neutral: {
+          DEFAULT: '#E2E8F0',   // Light Gray
+          light: '#F7FAFC',     // Off-White
+          dark: '#A0AEC0',      // Medium Gray
+          contrast: '#1A202C'   // Dark text for contrast
+        },
+        success: {
+          DEFAULT: '#38A169',   // Green
+          light: '#68D391',     // Light Green
+          dark: '#2F855A',      // Dark Green
+          contrast: '#FFFFFF'    // White text for contrast
+        },
+        warning: {
+          DEFAULT: '#DD6B20',   // Orange
+          light: '#F6AD55',     // Light Orange
+          dark: '#C05621',      // Dark Orange
+          contrast: '#FFFFFF'    // White text for contrast
+        },
+        error: {
+          DEFAULT: '#E53E3E',   // Red
+          light: '#FC8181',     // Light Red
+          dark: '#C53030',      // Dark Red
+          contrast: '#FFFFFF'    // White text for contrast
+        },
         
         // Legacy colors
         background: "var(--background)",
@@ -75,10 +108,30 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "Inter", "sans-serif"],
-        display: ["var(--font-display)", "Space Grotesk", "sans-serif"],
-        serif: ["var(--font-serif)", "Georgia", "serif"],
-        mono: ["var(--font-mono)", "Menlo", "monospace"],
+        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        display: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+        serif: ['Merriweather', 'Georgia', 'serif'],
+        mono: ['Fira Code', 'Menlo', 'monospace'],
+      },
+      spacing: {
+        '128': '32rem',
+        '144': '36rem',
+      },
+      maxWidth: {
+        '8xl': '88rem',
+        '9xl': '96rem',
+      },
+      opacity: {
+        '15': '0.15',
+        '85': '0.85',
+      },
+      scale: {
+        '102': '1.02',
+      },
+      boxShadow: {
+        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'elevate': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -149,5 +202,11 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+    require('@tailwindcss/forms')({
+      strategy: 'class',
+    }),
+  ],
 } satisfies Config;
