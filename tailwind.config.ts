@@ -10,103 +10,79 @@ export default {
         md: "0.375rem",
         sm: "0.25rem",
       },
-      colors: {
-        // Modern Professional Color Palette
-        primary: {
-          DEFAULT: '#1A365D',    // Deep Navy
-          light: '#2C5282',     // Lighter Navy
-          dark: '#0F1E3D',      // Darker Navy
-          contrast: '#FFFFFF'    // White text for contrast
+        colors: {
+          border: "var(--border)",
+          input: "var(--input)",
+          ring: "var(--ring)",
+          background: "var(--background)",
+          foreground: "var(--foreground)",
+          primary: {
+            DEFAULT: "var(--primary)",
+            foreground: "var(--primary-foreground)",
+            light: "var(--primary-light)",
+            dark: "var(--primary-dark)",
+          },
+          secondary: {
+            DEFAULT: "var(--secondary)",
+            foreground: "var(--secondary-foreground)",
+            light: "var(--secondary-light)",
+            dark: "var(--secondary-dark)",
+          },
+          accent: {
+            DEFAULT: "var(--accent)",
+            foreground: "var(--accent-foreground)",
+            light: "var(--accent-light)",
+            dark: "var(--accent-dark)",
+          },
+          destructive: {
+            DEFAULT: "var(--destructive)",
+            foreground: "var(--destructive-foreground)",
+          },
+          muted: {
+            DEFAULT: "var(--muted)",
+            foreground: "var(--muted-foreground)",
+          },
+          popover: {
+            DEFAULT: "var(--popover)",
+            foreground: "var(--popover-foreground)",
+          },
+          card: {
+            DEFAULT: "var(--card)",
+            foreground: "var(--card-foreground)",
+          },
+          success: {
+            DEFAULT: '#38A169',
+            light: '#68D391',
+            dark: '#2F855A',
+          },
+          warning: {
+            DEFAULT: '#DD6B20',
+            light: '#F6AD55',
+            dark: '#C05621',
+          },
+          error: {
+            DEFAULT: '#E53E3E',
+            light: '#FC8181',
+            dark: '#C53030',
+          },
+          chart: {
+            "1": "var(--chart-1)",
+            "2": "var(--chart-2)",
+            "3": "var(--chart-3)",
+            "4": "var(--chart-4)",
+            "5": "var(--chart-5)",
+          },
+          sidebar: {
+            DEFAULT: "var(--sidebar)",
+            foreground: "var(--sidebar-foreground)",
+            primary: "var(--sidebar-primary)",
+            "primary-foreground": "var(--sidebar-primary-foreground)",
+            accent: "var(--sidebar-accent)",
+            "accent-foreground": "var(--sidebar-accent-foreground)",
+            border: "var(--sidebar-border)",
+            ring: "var(--sidebar-ring)",
+          },
         },
-        secondary: {
-          DEFAULT: '#2D3748',   // Dark Gray
-          light: '#4A5568',     // Medium Gray
-          dark: '#1A202C',      // Charcoal
-          contrast: '#FFFFFF'    // White text for contrast
-        },
-        accent: {
-          DEFAULT: '#3182CE',   // Vibrant Blue
-          light: '#63B3ED',     // Light Blue
-          dark: '#2C5282',      // Dark Blue
-          contrast: '#FFFFFF'    // White text for contrast
-        },
-        neutral: {
-          DEFAULT: '#E2E8F0',   // Light Gray
-          light: '#F7FAFC',     // Off-White
-          dark: '#A0AEC0',      // Medium Gray
-          contrast: '#1A202C'   // Dark text for contrast
-        },
-        success: {
-          DEFAULT: '#38A169',   // Green
-          light: '#68D391',     // Light Green
-          dark: '#2F855A',      // Dark Green
-          contrast: '#FFFFFF'    // White text for contrast
-        },
-        warning: {
-          DEFAULT: '#DD6B20',   // Orange
-          light: '#F6AD55',     // Light Orange
-          dark: '#C05621',      // Dark Orange
-          contrast: '#FFFFFF'    // White text for contrast
-        },
-        error: {
-          DEFAULT: '#E53E3E',   // Red
-          light: '#FC8181',     // Light Red
-          dark: '#C53030',      // Dark Red
-          contrast: '#FFFFFF'    // White text for contrast
-        },
-        
-        // Legacy colors
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        card: {
-          DEFAULT: "var(--card)",
-          foreground: "var(--card-foreground)",
-        },
-        popover: {
-          DEFAULT: "var(--popover)",
-          foreground: "var(--popover-foreground)",
-        },
-        primary: {
-          DEFAULT: "var(--primary)",
-          foreground: "var(--primary-foreground)",
-        },
-        secondary: {
-          DEFAULT: "var(--secondary)",
-          foreground: "var(--secondary-foreground)",
-        },
-        muted: {
-          DEFAULT: "var(--muted)",
-          foreground: "var(--muted-foreground)",
-        },
-        accent: {
-          DEFAULT: "var(--accent)",
-          foreground: "var(--accent-foreground)",
-        },
-        destructive: {
-          DEFAULT: "var(--destructive)",
-          foreground: "var(--destructive-foreground)",
-        },
-        border: "var(--border)",
-        input: "var(--input)",
-        ring: "var(--ring)",
-        chart: {
-          "1": "var(--chart-1)",
-          "2": "var(--chart-2)",
-          "3": "var(--chart-3)",
-          "4": "var(--chart-4)",
-          "5": "var(--chart-5)",
-        },
-        sidebar: {
-          DEFAULT: "var(--sidebar)",
-          foreground: "var(--sidebar-foreground)",
-          primary: "var(--sidebar-primary)",
-          "primary-foreground": "var(--sidebar-primary-foreground)",
-          accent: "var(--sidebar-accent)",
-          "accent-foreground": "var(--sidebar-accent-foreground)",
-          border: "var(--sidebar-border)",
-          ring: "var(--sidebar-ring)",
-        },
-      },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
         display: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
