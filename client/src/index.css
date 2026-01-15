@@ -21,35 +21,35 @@
 @tailwind utilities;
 
 :root {
-  /* Modern Professional Color Palette */
-  --primary: #1A365D;        /* Deep Navy */
-  --primary-light: #2C5282;  /* Lighter Navy */
-  --primary-dark: #0F1E3D;   /* Darker Navy */
-  --secondary: #2D3748;      /* Dark Gray */
-  --secondary-light: #4A5568; /* Medium Gray */
-  --secondary-dark: #1A202C; /* Charcoal */
-  --accent: #3182CE;         /* Vibrant Blue */
-  --accent-light: #63B3ED;   /* Light Blue */
-  --accent-dark: #2C5282;    /* Dark Blue */
-  --neutral: #E2E8F0;        /* Light Gray */
-  --neutral-light: #F7FAFC;  /* Off-White */
-  --neutral-dark: #A0AEC0;   /* Medium Gray */
-  --success: #38A169;        /* Green */
-  --warning: #DD6B20;        /* Orange */
-  --error: #E53E3E;          /* Red */
+  /* Zenko Nature Color Palette */
+  --primary: #01583F;        /* Deep Green */
+  --primary-light: #1A6950;  /* Teal Green */
+  --primary-dark: #01583F;   /* Deep Green */
+  --secondary: #1A6950;      /* Teal Green */
+  --secondary-light: #1A6950; /* Teal Green */
+  --secondary-dark: #01583F; /* Deep Green */
+  --accent: #CDF546;         /* Lime Green */
+  --accent-light: #CDF546;   /* Lime Green */
+  --accent-dark: #CDF546;    /* Lime Green */
+  --neutral: #FDF9DC;        /* Light Beige */
+  --neutral-light: #FDF9DC;  /* Light Beige */
+  --neutral-dark: #1A6950;   /* Teal Green */
+  --success: #CDF546;        /* Lime Green */
+  --warning: #F56013;        /* Bright Orange */
+  --error: #F56013;          /* Bright Orange */
   
   /* Backward compatibility */
-  --background: #FFFFFF;
-  --foreground: #1A202C;
-  --card: #FFFFFF;
-  --card-foreground: #1A202C;
-  --popover: #FFFFFF;
-  --popover-foreground: #1A202C;
-  --muted: #F7FAFC;
-  --muted-foreground: #718096;
-  --border: #E2E8F0;
-  --input: #E2E8F0;
-  --ring: #3182CE;
+  --background: #01583F;
+  --foreground: #FDF9DC;
+  --card: #1A6950;
+  --card-foreground: #FDF9DC;
+  --popover: #1A6950;
+  --popover-foreground: #FDF9DC;
+  --muted: #1A6950;
+  --muted-foreground: #FDF9DC;
+  --border: #1A6950;
+  --input: #1A6950;
+  --ring: #CDF546;
   --radius: 0.5rem;
   
   /* Typography */
@@ -70,17 +70,17 @@
 
 /* Dark mode support */
 .dark {
-  --background: #1A202C;
-  --foreground: #F7FAFC;
-  --card: #1A202C;
-  --card-foreground: #F7FAFC;
-  --popover: #1A202C;
-  --popover-foreground: #F7FAFC;
-  --muted: #2D3748;
-  --muted-foreground: #A0AEC0;
-  --border: #2D3748;
-  --input: #2D3748;
-  --ring: #4299E1;
+  --background: #01583F;
+  --foreground: #FDF9DC;
+  --card: #1A6950;
+  --card-foreground: #FDF9DC;
+  --popover: #1A6950;
+  --popover-foreground: #FDF9DC;
+  --muted: #1A6950;
+  --muted-foreground: #FDF9DC;
+  --border: #1A6950;
+  --input: #1A6950;
+  --ring: #CDF546;
 }
 
 @layer base {
@@ -89,21 +89,26 @@
   }
 
   html {
-    @apply font-sans text-base antialiased text-gray-900 bg-white;
+    @apply font-sans text-base antialiased;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #01583F;
+    color: #FDF9DC;
   }
 
   body {
-    @apply min-h-screen bg-white text-gray-900 transition-colors duration-200;
+    @apply min-h-screen transition-colors duration-200;
     font-feature-settings: 'rlig' 1, 'calt' 1, 'ss01' 1;
     overflow-x: hidden;
+    background-color: #01583F;
+    color: #FDF9DC;
   }
 
   /* Typography */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-bold tracking-tight text-gray-900 dark:text-white;
+    @apply font-display font-bold tracking-tight;
+    color: #FDF9DC;
   }
 
   h1 {
@@ -119,29 +124,54 @@
   }
 
   p {
-    @apply text-base md:text-lg leading-relaxed text-gray-600 dark:text-gray-300;
+    @apply text-base md:text-lg leading-relaxed;
+    color: #FDF9DC;
   }
 
   /* Links */
   a {
-    @apply text-blue-600 hover:text-blue-800 transition-colors duration-200;
+    @apply transition-colors duration-200;
+    color: #CDF546;
+  }
+  
+  a:hover {
+    color: #F56013;
   }
 
   /* Buttons */
   .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    --tw-ring-color: #CDF546;
   }
 
   .btn-primary {
-    @apply bg-blue-700 text-white hover:bg-blue-800;
+    background-color: #F56013;
+    color: #01583F;
+  }
+  
+  .btn-primary:hover {
+    background-color: #CDF546;
   }
 
   .btn-secondary {
-    @apply bg-gray-700 text-white hover:bg-gray-800;
+    background-color: #1A6950;
+    color: #FDF9DC;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #CDF546;
+    color: #01583F;
   }
 
   .btn-outline {
-    @apply border-2 border-gray-300 text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700;
+    @apply border-2;
+    border-color: #CDF546;
+    color: #CDF546;
+  }
+  
+  .btn-outline:hover {
+    background-color: #CDF546;
+    color: #01583F;
   }
 
   /* Forms */
@@ -158,7 +188,15 @@
   input[type='time'],
   textarea,
   select {
-    @apply w-full px-4 py-2 text-base border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+    @apply w-full px-4 py-2 text-base rounded-md shadow-sm;
+    background-color: #1A6950;
+    border-color: #1A6950;
+    color: #FDF9DC;
+  }
+  
+  input:focus, textarea:focus, select:focus {
+    --tw-ring-color: #CDF546;
+    border-color: #CDF546;
   }
 
   /* Custom scrollbar */
@@ -167,11 +205,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-gray-100 dark:bg-gray-800;
+    background-color: #01583F;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gray-300 dark:bg-gray-600 rounded-full hover:bg-gray-400 dark:hover:bg-gray-500;
+    background-color: #1A6950;
+    border-radius: 9999px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #CDF546;
   }
 }
 

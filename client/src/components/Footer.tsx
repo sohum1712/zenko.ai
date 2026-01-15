@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer id="footer" className="py-10 bg-[#171717] border-t-4 border-[#F25C23]" role="contentinfo">
+    <footer id="footer" className="py-10 bg-[#01583F] border-t-4 border-[#CDF546]" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div className="lg:col-span-2">
@@ -23,11 +23,11 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
               className="flex items-center space-x-2 mb-6"
             >
-              <div className="w-10 h-10 bg-[#4D4D4D] rounded-xl flex items-center justify-center">
-<span className="text-xl font-bold text-[#DEDEDE] font-display">Z</span>
+              <div className="w-10 h-10 bg-[#1A6950] rounded-xl flex items-center justify-center">
+<span className="text-xl font-bold text-[#FDF9DC] font-display">Z</span>
               </div>
-              <span className="text-2xl font-bold text-[#DEDEDE] font-display">
-                ZEN<span className="text-[#F25C23]">KO</span>
+              <span className="text-2xl font-bold text-[#FDF9DC] font-display">
+                ZEN<span className="text-[#CDF546]">KO</span>
               </span>
             </motion.div>
             <motion.p
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-[#DEDEDE]/80 mb-8 max-w-md text-base leading-relaxed font-sans"
+              className="text-[#FDF9DC]/80 mb-8 max-w-md text-base leading-relaxed font-sans"
             >
 Empowering businesses with innovative digital solutions that transform visions into reality. We combine creativity, strategy, and cutting-edge technology to deliver exceptional results.
             </motion.p>
@@ -48,7 +48,7 @@ Empowering businesses with innovative digital solutions that transform visions i
             >
               <motion.a
                 href="#"
-className="w-10 h-10 bg-[#4D4D4D] rounded-xl flex items-center justify-center hover:bg-[#F25C23] hover:text-[#171717] transition-all duration-300"
+className="w-10 h-10 bg-[#1A6950] rounded-xl flex items-center justify-center hover:bg-[#CDF546] hover:text-[#01583F] transition-all duration-300 text-[#FDF9DC]"
                 whileHover={{ scale: 1.1 }}
                 data-testid="social-facebook"
               >
@@ -56,7 +56,7 @@ className="w-10 h-10 bg-[#4D4D4D] rounded-xl flex items-center justify-center ho
               </motion.a>
               <motion.a
                 href="#"
-className="w-10 h-10 bg-[#4D4D4D] rounded-xl flex items-center justify-center hover:bg-[#F25C23] hover:text-[#171717] transition-all duration-300"
+className="w-10 h-10 bg-[#1A6950] rounded-xl flex items-center justify-center hover:bg-[#CDF546] hover:text-[#01583F] transition-all duration-300 text-[#FDF9DC]"
                 whileHover={{ scale: 1.1 }}
                 data-testid="social-instagram"
               >
@@ -64,7 +64,7 @@ className="w-10 h-10 bg-[#4D4D4D] rounded-xl flex items-center justify-center ho
               </motion.a>
               <motion.a
                 href="#"
-className="w-10 h-10 bg-[#4D4D4D] rounded-xl flex items-center justify-center hover:bg-[#F25C23] hover:text-[#171717] transition-all duration-300"
+className="w-10 h-10 bg-[#1A6950] rounded-xl flex items-center justify-center hover:bg-[#CDF546] hover:text-[#01583F] transition-all duration-300 text-[#FDF9DC]"
                 whileHover={{ scale: 1.1 }}
                 data-testid="social-linkedin"
               >
@@ -72,7 +72,7 @@ className="w-10 h-10 bg-[#4D4D4D] rounded-xl flex items-center justify-center ho
               </motion.a>
               <motion.a
                 href="#"
-className="w-10 h-10 bg-[#4D4D4D] rounded-xl flex items-center justify-center hover:bg-[#F25C23] hover:text-[#171717] transition-all duration-300"
+className="w-10 h-10 bg-[#1A6950] rounded-xl flex items-center justify-center hover:bg-[#CDF546] hover:text-[#01583F] transition-all duration-300 text-[#FDF9DC]"
                 whileHover={{ scale: 1.1 }}
                 data-testid="social-twitter"
               >
@@ -87,12 +87,12 @@ className="w-10 h-10 bg-[#4D4D4D] rounded-xl flex items-center justify-center ho
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-bold mb-6 text-[#DEDEDE] text-xl font-display">Services</h4>
-            <ul className="space-y-3 text-[#DEDEDE]/70 font-sans">
+            <h4 className="font-bold mb-6 text-[#FDF9DC] text-xl font-display">Services</h4>
+            <ul className="space-y-3 text-[#FDF9DC]/70 font-sans">
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-className="hover:text-[#F25C23] transition-colors text-left text-sm"
+className="hover:text-[#CDF546] transition-colors text-left text-sm"
                   data-testid="footer-business-websites"
                 >
                   Business Websites
@@ -101,7 +101,7 @@ className="hover:text-[#F25C23] transition-colors text-left text-sm"
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-className="hover:text-[#F25C23] transition-colors text-left text-sm"
+className="hover:text-[#CDF546] transition-colors text-left text-sm"
                   data-testid="footer-ecommerce"
                 >
                   E-commerce
@@ -110,7 +110,7 @@ className="hover:text-[#F25C23] transition-colors text-left text-sm"
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-className="hover:text-[#F25C23] transition-colors text-left text-sm"
+className="hover:text-[#CDF546] transition-colors text-left text-sm"
                   data-testid="footer-portfolios"
                 >
                   Portfolios
@@ -119,7 +119,7 @@ className="hover:text-[#F25C23] transition-colors text-left text-sm"
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-className="hover:text-[#F25C23] transition-colors text-left text-sm"
+className="hover:text-[#CDF546] transition-colors text-left text-sm"
                   data-testid="footer-seo-marketing"
                 >
                   SEO & Marketing
@@ -128,7 +128,7 @@ className="hover:text-[#F25C23] transition-colors text-left text-sm"
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-className="hover:text-[#F25C23] transition-colors text-left text-sm"
+className="hover:text-[#CDF546] transition-colors text-left text-sm"
                   data-testid="footer-hosting-support"
                 >
                   Hosting & Support
@@ -143,12 +143,12 @@ className="hover:text-[#F25C23] transition-colors text-left text-sm"
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-bold mb-6 text-[#DEDEDE] text-xl font-display">Quick Links</h4>
-            <ul className="space-y-3 text-[#DEDEDE]/70 font-sans">
+            <h4 className="font-bold mb-6 text-[#FDF9DC] text-xl font-display">Quick Links</h4>
+            <ul className="space-y-3 text-[#FDF9DC]/70 font-sans">
               <li>
                 <button
                   onClick={() => scrollToSection('about')}
-className="hover:text-[#F25C23] transition-colors text-left text-sm"
+className="hover:text-[#CDF546] transition-colors text-left text-sm"
                   data-testid="footer-about"
                 >
                   About Us
@@ -157,7 +157,7 @@ className="hover:text-[#F25C23] transition-colors text-left text-sm"
               <li>
                 <button
                   onClick={() => scrollToSection('portfolio')}
-className="hover:text-[#F25C23] transition-colors text-left text-sm"
+className="hover:text-[#CDF546] transition-colors text-left text-sm"
                   data-testid="footer-portfolio"
                 >
                   Portfolio
@@ -166,7 +166,7 @@ className="hover:text-[#F25C23] transition-colors text-left text-sm"
               <li>
                 <button
                   onClick={() => scrollToSection('testimonials')}
-className="hover:text-[#F25C23] transition-colors text-left text-sm"
+className="hover:text-[#CDF546] transition-colors text-left text-sm"
                   data-testid="footer-testimonials"
                 >
                   Testimonials
@@ -175,14 +175,14 @@ className="hover:text-[#F25C23] transition-colors text-left text-sm"
               <li>
                 <button
                   onClick={() => scrollToSection('contact')}
-className="hover:text-[#F25C23] transition-colors text-left text-sm"
+className="hover:text-[#CDF546] transition-colors text-left text-sm"
                   data-testid="footer-contact"
                 >
                   Contact
                 </button>
               </li>
               <li>
-<a href="#" className="hover:text-[#F25C23] transition-colors text-sm" data-testid="footer-blog">
+<a href="#" className="hover:text-[#CDF546] transition-colors text-sm" data-testid="footer-blog">
                   Blog
                 </a>
               </li>
@@ -195,10 +195,10 @@ className="hover:text-[#F25C23] transition-colors text-left text-sm"
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="border-t-2 border-[#4D4D4D] mt-10 pt-6 text-center text-[#DEDEDE]/60 text-sm"
+          className="border-t-2 border-[#1A6950] mt-10 pt-6 text-center text-[#FDF9DC]/60 text-sm"
         >
           <p className="text-base font-sans">
-              © 2024 <span className="text-[#F25C23] font-bold">Zenko Digital</span>. All rights reserved. Built with <span className="text-[#F25C23]">❤️</span> for the digital future.
+              © 2024 <span className="text-[#CDF546] font-bold">Zenko Digital</span>. All rights reserved. Built with <span className="text-[#F56013]">❤️</span> for the digital future.
             </p>
         </motion.div>
       </div>
