@@ -16,20 +16,15 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-3 mb-5 md:mb-6"
-            >
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-[#4d8af0] rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/30">
-                <span className="text-lg md:text-xl font-bold text-white" style={{ fontFamily: "'Inter', sans-serif" }}>Z</span>
-              </div>
-              <span className="text-xl md:text-2xl font-bold text-white" style={{ fontFamily: "'Inter', sans-serif" }}>
-                ZEN<span className="text-[#4d8af0]">KO</span>
-              </span>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="flex items-center gap-3 mb-5 md:mb-6"
+              >
+                <img src="/logo.svg" alt="Zenko Digital" className="h-10 md:h-12 w-auto brightness-0 invert" />
+              </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
