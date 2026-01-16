@@ -6,7 +6,7 @@ import About from '@/components/About';
 import Portfolio from '@/components/Portfolio';
 import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+
 import SkipLinks from '@/components/SkipLinks';
 import SEOHead from '@/components/SEOHead';
 
@@ -25,7 +25,7 @@ const Home: React.FC = () => {
           <Testimonials />
           <Contact />
         </main>
-        <Footer />
+
       </div>
     </>
   );
