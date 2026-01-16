@@ -2,73 +2,108 @@ import React from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  const floatingTags = [
-    { text: '#Branding', position: 'top-32 left-16', delay: '0s' },
-    { text: '#WebDesign', position: 'top-48 left-8', delay: '0.5s' },
-    { text: '#Marketing', position: 'top-64 left-24', delay: '1s' },
-    { text: '#Creative', position: 'top-32 right-16', delay: '0.3s' },
-    { text: '#Digital', position: 'top-48 right-8', delay: '0.8s' },
-    { text: '#Strategy', position: 'top-64 right-24', delay: '1.2s' },
-  ];
-
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#D8CFBC] via-[#FFFBF4] to-[#D8CFBC]/30">
-      {/* Cloud-like decorative elements */}
+    <section id="home" className="relative min-h-screen overflow-hidden">
+      {/* Sky Blue Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#e8f4fc] via-[#f0f7fc] to-[#f8fbfe]"></div>
+      
+      {/* Cloud Images - Using CSS for cloud-like shapes */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-[600px] h-[400px] bg-[#FFFBF4] rounded-full blur-3xl opacity-80 -translate-x-1/4 -translate-y-1/4"></div>
-        <div className="absolute top-0 right-0 w-[500px] h-[350px] bg-[#FFFBF4] rounded-full blur-3xl opacity-80 translate-x-1/4 -translate-y-1/4"></div>
-        <div className="absolute top-20 left-1/4 w-[300px] h-[200px] bg-[#FFFBF4] rounded-full blur-2xl opacity-60"></div>
-        <div className="absolute top-16 right-1/4 w-[350px] h-[220px] bg-[#FFFBF4] rounded-full blur-2xl opacity-60"></div>
-        <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[400px] h-[250px] bg-[#FFFBF4] rounded-full blur-3xl opacity-70"></div>
+        {/* Top left cloud cluster */}
+        <div className="absolute -top-20 -left-20 w-[500px] h-[300px] bg-white rounded-full blur-3xl opacity-90"></div>
+        <div className="absolute top-0 left-20 w-[400px] h-[250px] bg-white rounded-full blur-2xl opacity-80"></div>
+        <div className="absolute top-10 left-60 w-[300px] h-[200px] bg-white rounded-full blur-2xl opacity-70"></div>
+        
+        {/* Top right cloud cluster */}
+        <div className="absolute -top-20 -right-20 w-[500px] h-[300px] bg-white rounded-full blur-3xl opacity-90"></div>
+        <div className="absolute top-0 right-20 w-[400px] h-[250px] bg-white rounded-full blur-2xl opacity-80"></div>
+        <div className="absolute top-10 right-60 w-[300px] h-[200px] bg-white rounded-full blur-2xl opacity-70"></div>
+        
+        {/* Center top cloud */}
+        <div className="absolute top-5 left-1/2 -translate-x-1/2 w-[350px] h-[200px] bg-white rounded-full blur-2xl opacity-60"></div>
+        
+        {/* Left side clouds */}
+        <div className="absolute top-40 -left-10 w-[300px] h-[180px] bg-white rounded-full blur-2xl opacity-80"></div>
+        <div className="absolute top-60 left-10 w-[250px] h-[150px] bg-white rounded-full blur-xl opacity-70"></div>
+        
+        {/* Right side clouds */}
+        <div className="absolute top-40 -right-10 w-[300px] h-[180px] bg-white rounded-full blur-2xl opacity-80"></div>
+        <div className="absolute top-60 right-10 w-[250px] h-[150px] bg-white rounded-full blur-xl opacity-70"></div>
       </div>
 
-      {/* Floating Tags */}
-      <div className="absolute inset-0 hidden lg:block">
-        {floatingTags.map((tag, idx) => (
-          <div
-            key={idx}
-            className={`absolute ${tag.position} animate-float`}
-            style={{ animationDelay: tag.delay }}
-          >
-            <span className="px-5 py-2.5 bg-[#FFFBF4] rounded-full text-[#11120D] text-sm font-medium shadow-lg border border-[#D8CFBC]/50 backdrop-blur-sm">
-              {tag.text}
-            </span>
-          </div>
-        ))}
+      {/* Floating Tags - Left Side */}
+      <div className="absolute inset-0 hidden lg:block pointer-events-none">
+        {/* Left tags */}
+        <div className="absolute top-36 left-12 animate-float" style={{ animationDelay: '0s' }}>
+          <span className="px-5 py-2.5 bg-white rounded-full text-[#1a1a2e] text-sm font-normal shadow-lg border border-gray-100 italic">
+            #writing
+          </span>
+        </div>
+        <div className="absolute top-56 left-6 animate-float" style={{ animationDelay: '0.5s' }}>
+          <span className="px-5 py-2.5 bg-white rounded-full text-[#1a1a2e] text-sm font-normal shadow-lg border border-gray-100 italic">
+            #Art work
+          </span>
+        </div>
+        <div className="absolute top-72 left-20 animate-float" style={{ animationDelay: '1s' }}>
+          <span className="px-5 py-2.5 bg-white rounded-full text-[#1a1a2e] text-sm font-normal shadow-lg border border-gray-100 italic">
+            #Drawing
+          </span>
+        </div>
+        
+        {/* Right tags */}
+        <div className="absolute top-36 right-12 animate-float" style={{ animationDelay: '0.3s' }}>
+          <span className="px-5 py-2.5 bg-white rounded-full text-[#1a1a2e] text-sm font-normal shadow-lg border border-gray-100 italic">
+            #Creative
+          </span>
+        </div>
+        <div className="absolute top-52 right-6 animate-float" style={{ animationDelay: '0.8s' }}>
+          <span className="px-5 py-2.5 bg-white rounded-full text-[#1a1a2e] text-sm font-normal shadow-lg border border-gray-100 italic">
+            #Visual Art
+          </span>
+        </div>
+        <div className="absolute top-68 right-16 animate-float" style={{ animationDelay: '1.2s' }}>
+          <span className="px-5 py-2.5 bg-white rounded-full text-[#1a1a2e] text-sm font-normal shadow-lg border border-gray-100 italic">
+            #Creative
+          </span>
+        </div>
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
         <div className="text-center">
-          {/* Logo Icon */}
-          <div className="flex justify-center mb-8">
-            <div className="w-16 h-16 rounded-full border-2 border-[#11120D] flex items-center justify-center">
-              <div className="w-8 h-10 border-2 border-[#11120D] rounded-full"></div>
+          {/* Oval Icon */}
+          <div className="flex justify-center mb-6">
+            <div className="w-14 h-14 rounded-full border-2 border-[#1a1a2e] flex items-center justify-center">
+              <div className="w-6 h-8 border-2 border-[#1a1a2e] rounded-full"></div>
             </div>
           </div>
 
-          {/* Main Headline */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black text-[#11120D] leading-tight tracking-tight mb-6">
+          {/* Main Headline - Exact font style */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-normal text-[#1a1a2e] leading-tight tracking-tight mb-6" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
             Creative Digital Agency
           </h1>
 
           {/* Subtitle */}
-          <p className="text-[#565449] text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-sans mb-10">
-            Zenko Digital provides innovative solutions where brands can flourish and explore their creative potential.
+          <p className="text-[#6b7280] text-base md:text-lg max-w-xl mx-auto leading-relaxed mb-10" style={{ fontFamily: "'Inter', sans-serif" }}>
+            Zenko Digital provides a nurturing environment where brands can flourish and explore their creative potential.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-3 bg-[#11120D] text-[#FFFBF4] px-8 py-4 rounded-full font-bold text-lg font-sans hover:bg-[#565449] transition-all duration-300 transform hover:scale-105 group shadow-xl"
+              className="inline-flex items-center justify-center gap-2 bg-[#4d8af0] text-white px-7 py-3.5 rounded-full font-medium text-base hover:bg-[#3b7ae0] transition-all duration-300 shadow-lg shadow-blue-200/50"
+              style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Get Started
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4" />
             </a>
-            <button className="inline-flex items-center justify-center gap-3 bg-transparent text-[#11120D] px-8 py-4 rounded-full font-bold text-lg font-sans hover:bg-[#11120D]/10 transition-all duration-300 group">
-              <div className="w-10 h-10 bg-[#FFFBF4] rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                <Play className="w-4 h-4 text-[#11120D] ml-0.5" fill="#11120D" />
+            <button 
+              className="inline-flex items-center justify-center gap-3 text-[#1a1a2e] px-6 py-3.5 rounded-full font-medium text-base hover:bg-black/5 transition-all duration-300"
+              style={{ fontFamily: "'Inter', sans-serif" }}
+            >
+              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
+                <Play className="w-4 h-4 text-[#1a1a2e] ml-0.5" fill="#1a1a2e" />
               </div>
               Watch Video
             </button>
@@ -76,42 +111,54 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom Section - Features */}
-      <div className="relative z-10 bg-[#FFFBF4] py-16">
+      {/* Bottom Section - White Background */}
+      <div className="relative z-10 bg-[#fafbfc] py-16 mt-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* Feature 1 */}
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl md:text-3xl font-display font-black text-[#11120D] mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+            {/* Why choose section */}
+            <div className="text-left">
+              <h3 className="text-3xl md:text-4xl font-normal text-[#1a1a2e] mb-1" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
                 Why choose
               </h3>
-              <h3 className="text-2xl md:text-3xl font-display font-black text-[#565449] mb-4">
+              <h3 className="text-3xl md:text-4xl font-normal text-[#9ca3af] mb-4" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
                 Zenko?
               </h3>
-              <p className="text-[#565449] text-sm leading-relaxed font-sans">
-                Our clients choose us because of our commitment to excellence, innovative approach, and proven track record of delivering exceptional results.
+              <p className="text-[#6b7280] text-sm leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
+                Our clients are chosen to work with us because of the high quality of our creative solutions and dedication to excellence.
               </p>
             </div>
 
-            {/* Feature 2 */}
+            {/* Full Development */}
             <div className="text-center">
-              <div className="w-16 h-16 bg-[#11120D] rounded-2xl flex items-center justify-center mx-auto mb-4 transform rotate-12">
-                <span className="text-[#FFFBF4] text-2xl transform -rotate-12">◆</span>
+              <div className="flex justify-center mb-4">
+                <div className="w-14 h-14 bg-[#4d8af0] rounded-xl flex items-center justify-center transform rotate-12 shadow-lg shadow-blue-200/50">
+                  <svg className="w-6 h-6 text-white transform -rotate-12" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                  </svg>
+                </div>
               </div>
-              <h4 className="text-xl font-display font-bold text-[#11120D] mb-2">Full Development</h4>
-              <p className="text-[#565449] text-sm leading-relaxed font-sans">
+              <h4 className="text-lg font-semibold text-[#1a1a2e] mb-2" style={{ fontFamily: "'Inter', sans-serif" }}>
+                Full Development
+              </h4>
+              <p className="text-[#6b7280] text-sm leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
                 We believe that design should contribute to the full development of each project.
               </p>
             </div>
 
-            {/* Feature 3 */}
+            {/* Client Focused */}
             <div className="text-center">
-              <div className="w-16 h-16 bg-[#D8CFBC] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-[#11120D] text-2xl">♥</span>
+              <div className="flex justify-center mb-4">
+                <div className="w-14 h-14 bg-[#e8f4fc] rounded-xl flex items-center justify-center shadow-sm">
+                  <svg className="w-6 h-6 text-[#4d8af0]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </div>
               </div>
-              <h4 className="text-xl font-display font-bold text-[#11120D] mb-2">Client Focused</h4>
-              <p className="text-[#565449] text-sm leading-relaxed font-sans">
-                Our team is always ready to provide clients with exceptional service and support.
+              <h4 className="text-lg font-semibold text-[#1a1a2e] mb-2" style={{ fontFamily: "'Inter', sans-serif" }}>
+                Client Focused
+              </h4>
+              <p className="text-[#6b7280] text-sm leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
+                Our team is always ready to provide clients with exceptional service and warmth.
               </p>
             </div>
           </div>
