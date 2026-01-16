@@ -7,9 +7,9 @@ const Header = () => {
     <header className="bg-transparent absolute top-0 left-0 right-0 px-4 sm:px-6 py-5 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo and Brand */}
-        <a href="#home" className="flex items-center gap-2">
-          <img src="/logo.svg" alt="Zenko Digital" className="h-8 w-auto" />
-        </a>
+          <a href="#home" className="flex items-center gap-2">
+            <img src="/logo.svg" alt="Zenko Digital" className="h-10 w-auto" />
+          </a>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:block">

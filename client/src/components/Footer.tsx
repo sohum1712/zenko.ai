@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
                 viewport={{ once: true }}
                 className="flex items-center gap-3 mb-5 md:mb-6"
               >
-                <img src="/logo.svg" alt="Zenko Digital" className="h-10 md:h-12 w-auto brightness-0 invert" />
+                  <img src="/logo.svg" alt="Zenko Digital" className="h-8 md:h-10 w-auto brightness-0 invert" />
               </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
