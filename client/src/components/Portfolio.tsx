@@ -1,12 +1,12 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import LazyImage from '@/components/LazyImage';
-import Digital from "@/components/assets/Digital.png";
-import Brand from "@/components/assets/Brand_Building.png";
-import Marketing from "@/components/assets/Marketing.png";
-import EcomImage from "@/components/assets/Ecom.jpg";
-import MobileImage from "@/components/assets/Mobile.jpg";
-import CorporateImage from "@/components/assets/Corporate.jpg";
+import Digital from "@/assets/Digital.png";
+import Brand from "@/assets/Brand_Building.png";
+import Marketing from "@/assets/Marketing.png";
+import EcomImage from "@/assets/Ecom.jpg";
+import MobileImage from "@/assets/Mobile.jpg";
+import CorporateImage from "@/assets/Corporate.jpg";
 
 const portfolioItems = [
   {

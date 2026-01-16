@@ -7,10 +7,7 @@ const Header = () => {
     <header className="bg-transparent absolute top-0 left-0 right-0 px-4 sm:px-6 py-5 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
           <a href="#home" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-[#4d8af0] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">Z</span>
-            </div>
-            <span className="text-[#1a1a2e] font-semibold text-lg">Zenko</span>
+            <img src="/Zenko.svg" alt="Zenko" className="w-20 h-20 object-contain" />
           </a>
         <nav className="hidden md:block">
           <ul className="flex items-center gap-1 bg-white rounded-full px-1.5 py-1.5 shadow-sm border border-gray-100">

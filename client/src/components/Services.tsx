@@ -1,9 +1,9 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
-import BrandImage from '@/components/assets/Brand.jpg';
-import MarketingImage from '@/components/assets/Marketing.png';
-import DigitalImage from '@/components/assets/Digital.png';
+import BrandImage from '@/assets/Brand.jpg';
+import MarketingImage from '@/assets/Marketing.png';
+import DigitalImage from '@/assets/Digital.png';
 
 const Services: React.FC = () => {
   return (

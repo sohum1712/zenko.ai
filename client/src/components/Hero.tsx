@@ -9,26 +9,26 @@ const Hero: React.FC = () => {
       
       {/* Cloud Images - Using CSS for cloud-like shapes */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Top left cloud cluster */}
-        <div className="absolute -top-20 -left-20 w-[500px] h-[300px] bg-white rounded-full blur-3xl opacity-90"></div>
-        <div className="absolute top-0 left-20 w-[400px] h-[250px] bg-white rounded-full blur-2xl opacity-80"></div>
-        <div className="absolute top-10 left-60 w-[300px] h-[200px] bg-white rounded-full blur-2xl opacity-70"></div>
+        {/* Top left cloud cluster - Adjusted to stay in view */}
+        <div className="absolute top-0 left-6 w-[500px] h-[300px] bg-white rounded-full blur-3xl opacity-90"></div>
+        <div className="absolute top-10 left-10 w-[400px] h-[250px] bg-[#4d8af0]/20 rounded-full blur-2xl opacity-80"></div>
+        <div className="absolute top-20 left-40 w-[300px] h-[200px] bg-white rounded-full blur-2xl opacity-70"></div>
         
-        {/* Top right cloud cluster */}
-        <div className="absolute -top-20 -right-20 w-[500px] h-[300px] bg-white rounded-full blur-3xl opacity-90"></div>
-        <div className="absolute top-0 right-20 w-[400px] h-[250px] bg-white rounded-full blur-2xl opacity-80"></div>
-        <div className="absolute top-10 right-60 w-[300px] h-[200px] bg-white rounded-full blur-2xl opacity-70"></div>
+        {/* Top right cloud cluster - Adjusted to stay in view */}
+        <div className="absolute top-0 right-8 w-[500px] h-[300px] bg-[#4d8af0]/20 rounded-full blur-3xl opacity-90"></div>
+        <div className="absolute top-20 right-10 w-[400px] h-[250px] bg-white rounded-full blur-2xl opacity-80"></div>
+        <div className="absolute top-32 right-32 w-[300px] h-[200px] bg-[#4d8af0]/20 rounded-full blur-2xl opacity-70"></div>
         
         {/* Center top cloud */}
-        <div className="absolute top-5 left-1/2 -translate-x-1/2 w-[350px] h-[200px] bg-white rounded-full blur-2xl opacity-60"></div>
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[350px] h-[200px] bg-white rounded-full blur-2xl opacity-60"></div>
         
-        {/* Left side clouds */}
-        <div className="absolute top-40 -left-10 w-[300px] h-[180px] bg-white rounded-full blur-2xl opacity-80"></div>
-        <div className="absolute top-60 left-10 w-[250px] h-[150px] bg-white rounded-full blur-xl opacity-70"></div>
+        {/* Left side clouds - Lowered position */}
+        <div className="absolute top-60 left-2 w-[300px] h-[180px] bg-[#4d8af0]/20 rounded-full blur-2xl opacity-80"></div>
+        <div className="absolute top-80 left-8 w-[250px] h-[150px] bg-white rounded-full blur-xl opacity-70"></div>
         
-        {/* Right side clouds */}
-        <div className="absolute top-40 -right-10 w-[300px] h-[180px] bg-white rounded-full blur-2xl opacity-80"></div>
-        <div className="absolute top-60 right-10 w-[250px] h-[150px] bg-white rounded-full blur-xl opacity-70"></div>
+        {/* Right side clouds - Lowered position */}
+        <div className="absolute top-60 right-2 w-[300px] h-[180px] bg-white rounded-full blur-2xl opacity-80"></div>
+        <div className="absolute top-80 right-16 w-[250px] h-[150px] bg-[#4d8af0]/20 rounded-full blur-xl opacity-70"></div>
       </div>
 
       {/* Floating Tags - Left Side */}

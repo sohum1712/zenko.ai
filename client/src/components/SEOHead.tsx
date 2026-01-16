@@ -34,7 +34,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     "name": "Zenko Digital",
     "description": description,
     "url": "https://zenko.com",
-    "logo": "https://zenko.com/logo.png",
+    "logo": "https://zenko.com/Zenko.svg",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-98765-43210",
@@ -117,7 +117,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       </script>
       
       {/* Favicon */}
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="icon" type="image/svg+xml" href="/Zenko.svg" />
       <link rel="icon" type="image/png" href="/favicon.png" />
       
       {/* Preconnect for Performance */}
