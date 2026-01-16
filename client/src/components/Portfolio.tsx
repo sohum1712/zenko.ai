@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
 import LazyImage from '@/components/LazyImage';
 import Digital from "@/components/assets/Digital.png";
 import Brand from "@/components/assets/Brand_Building.png";
@@ -10,174 +11,112 @@ import CorporateImage from "@/components/assets/Corporate.jpg";
 const portfolioItems = [
   {
     title: "E-Commerce Platform",
-    description: "Complete online store with payment integration, inventory management, and customer analytics dashboard.",
+    description: "Complete online store with payment integration and analytics dashboard.",
     image: EcomImage,
     category: "Web Development",
-    technologies: ["React", "Node.js", "MongoDB"],
-    isPrimary: false,
   },
   {
     title: "Brand Identity Suite",
-    description: "Comprehensive brand development including logo design, color palette, typography, and brand guidelines.",
+    description: "Comprehensive brand development including logo, typography, and guidelines.",
     image: Brand,
     category: "Branding",
-    technologies: ["Adobe Suite", "Figma", "After Effects"],
-    isPrimary: true,
   },
   {
-    title: "Mobile App Development",
-    description: "Cross-platform mobile application with real-time features, push notifications, and offline capabilities.",
+    title: "Mobile Application",
+    description: "Cross-platform mobile app with real-time features and push notifications.",
     image: MobileImage,
     category: "Mobile Development",
-    technologies: ["React Native", "Firebase", "TypeScript"],
-    isPrimary: false,
   },
   {
     title: "Corporate Website",
-    description: "Professional corporate website with CMS integration, SEO optimization, and multi-language support.",
+    description: "Professional website with CMS integration and SEO optimization.",
     image: CorporateImage,
     category: "Web Development",
-    technologies: ["Next.js", "Strapi", "Tailwind CSS"],
-    isPrimary: true,
   },
   {
-    title: "Digital Marketing Campaign",
-    description: "Integrated digital marketing strategy including social media, PPC advertising, and content marketing.",
+    title: "Marketing Campaign",
+    description: "Integrated digital marketing strategy with social media and PPC.",
     image: Marketing,
     category: "Digital Marketing",
-    technologies: ["Google Ads", "Facebook Ads", "Analytics"],
-    isPrimary: false,
   },
   {
     title: "Creative Solutions",
-    description: "Innovative digital solutions combining AR/VR technologies with traditional web development approaches.",
+    description: "Innovative digital solutions combining AR/VR with web technologies.",
     image: Digital,
     category: "Innovation",
-    technologies: ["Three.js", "WebXR", "Progressive Web Apps"],
-    isPrimary: true,
   },
 ];
 
 const Portfolio: React.FC = () => (
-  <section id="portfolio" className="py-20 bg-[#01583F] relative overflow-hidden">
-    {/* Background decoration */}
+  <section id="portfolio" className="py-24 bg-[#11120D] relative overflow-hidden">
     <div className="absolute inset-0 bg-pattern-grid opacity-5"></div>
     
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="w-8 h-8 bg-[#F56013] rounded-full flex items-center justify-center">
-              <span className="block w-3 h-3 bg-[#01583F] rounded-full"></span>
-            </div>
-            <span className="uppercase text-sm font-bold tracking-widest text-[#CDF546] font-sans">OUR WORK</span>
-          </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#FDF9DC] mb-6 leading-tight font-display">
-            Our <span className="text-[#CDF546]">Creative</span> Portfolio
-          </h2>
-          <p className="text-[#FDF9DC]/80 max-w-3xl mx-auto text-lg leading-relaxed font-sans">
-            Discover our comprehensive range of digital solutions designed to accelerate your business growth and create lasting impact in your industry.
-          </p>
+      {/* Section Header */}
+      <div className="text-center mb-16">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#565449]/30 rounded-full border border-[#565449] mb-6">
+          <span className="w-2 h-2 bg-[#D8CFBC] rounded-full"></span>
+          <span className="text-[#D8CFBC] text-sm font-medium tracking-wide">OUR WORK</span>
         </div>
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-[#FFFBF4] leading-tight mb-6">
+          Featured <span className="text-[#D8CFBC]">Projects</span>
+        </h2>
+        <p className="text-[#D8CFBC] text-lg max-w-2xl mx-auto font-sans">
+          Discover our comprehensive range of digital solutions designed to accelerate your business growth.
+        </p>
+      </div>
+
       {/* Portfolio Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
         {portfolioItems.map((item, idx) => (
           <div
-            key={item.title + idx}
-            className={`
-              group relative rounded-3xl border-2 transition-all duration-500 hover-lift cursor-pointer overflow-hidden
-              ${item.isPrimary 
-                ? 'bg-[#1A6950] border-[#1A6950] hover:border-[#CDF546]' 
-                : 'bg-[#01583F] border-[#01583F] hover:border-[#CDF546]'
-              } p-8 flex flex-col min-h-[420px]
-            `}
+            key={idx}
+            className="group rounded-3xl bg-[#565449]/20 border border-[#565449]/50 overflow-hidden hover:border-[#D8CFBC]/50 transition-all duration-300 hover-lift"
           >
-            {/* Header */}
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs px-2 py-1 bg-[#CDF546]/20 text-[#CDF546] rounded-full font-semibold uppercase tracking-wider">
-                    {item.category}
-                  </span>
-                </div>
-                <h3 className={`text-xl font-black mb-2 font-display group-hover:text-[#CDF546] transition-colors duration-300 ${
-                    item.isPrimary ? 'text-[#FDF9DC]' : 'text-[#FDF9DC]'
-                  }`}>
-                    {item.title}
-                  </h3>
-                </div>
-                <div className={`
-                  w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-45
-                  ${item.isPrimary ? 'bg-[#F56013]' : 'bg-[#1A6950]'}
-                `}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M7 17L17 7" className={item.isPrimary ? 'stroke-[#01583F]' : 'stroke-[#CDF546]'} />
-                    <path d="M7 7h10v10" className={item.isPrimary ? 'stroke-[#01583F]' : 'stroke-[#CDF546]'} />
-                  </svg>
-                </div>
-              </div>
-              
-              {/* Description */}
-              <p className={`text-sm mb-6 leading-relaxed flex-grow font-sans ${
-                item.isPrimary ? 'text-[#FDF9DC]/90' : 'text-[#FDF9DC]/80'
-              }`}>
-              {item.description}
-            </p>
-            
-            {/* Technologies */}
-            <div className="mb-6">
-              <div className="flex flex-wrap gap-2">
-                {item.technologies.map((tech, techIdx) => (
-                  <span 
-                    key={techIdx}
-                    className="text-xs px-2 py-1 bg-[#FDF9DC]/10 text-[#FDF9DC]/70 rounded-md font-medium"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
             {/* Image */}
-            <div className="mt-auto overflow-hidden rounded-xl">
+            <div className="overflow-hidden h-48">
               <LazyImage
                 src={item.image}
-                alt={`${item.title} - ${item.category} project showcase`}
-                className="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-700"
-                aspectRatio="16/10"
-                containerClassName="rounded-xl"
+                alt={item.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                aspectRatio="16/9"
+                containerClassName="h-full"
               />
             </div>
             
-            {/* Hover overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#CDF546]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            {/* Content */}
+            <div className="p-6">
+              <span className="text-xs px-3 py-1 bg-[#D8CFBC]/20 text-[#D8CFBC] rounded-full font-medium uppercase tracking-wider">
+                {item.category}
+              </span>
+              <h3 className="text-[#FFFBF4] font-display font-bold text-xl mt-4 mb-2 group-hover:text-[#D8CFBC] transition-colors">
+                {item.title}
+              </h3>
+              <p className="text-[#D8CFBC] text-sm font-sans leading-relaxed">
+                {item.description}
+              </p>
+              <div className="mt-4 flex items-center gap-2 text-[#D8CFBC] group-hover:text-[#FFFBF4] transition-colors">
+                <span className="text-sm font-medium">View Project</span>
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </div>
+            </div>
           </div>
         ))}
       </div>
-      {/* Inspirational Quote Section */}
-      <div className="text-center bg-[#01583F] rounded-3xl p-12 border border-[#1A6950]">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="w-2 h-2 bg-[#CDF546] rounded-full"></div>
-            <div className="w-3 h-3 bg-[#CDF546] rounded-full" style={{animationDelay: '0.2s'}}></div>
-            <div className="w-2 h-2 bg-[#CDF546] rounded-full" style={{animationDelay: '0.4s'}}></div>
+
+      {/* Quote Section */}
+      <div className="text-center bg-[#565449]/20 rounded-3xl p-12 border border-[#565449]/50">
+        <blockquote className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-[#FFFBF4] leading-tight mb-8">
+          "Keep <span className="text-[#D8CFBC]">Creating</span> until you find your own <span className="text-[#D8CFBC]">Audience</span>."
+        </blockquote>
+        <div className="flex items-center justify-center gap-4">
+          <div className="w-14 h-14 bg-[#D8CFBC] rounded-2xl flex items-center justify-center">
+            <span className="text-xl font-display font-black text-[#11120D]">Z</span>
           </div>
-        <blockquote className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#FDF9DC] leading-tight mb-8 font-display">
-              "Keep <span className="bg-[#CDF546] px-3 py-1 rounded-xl text-[#01583F] inline-block transform -rotate-1">Creating</span><br className="md:hidden" /> 
-              until you find your own <span className="text-[#CDF546] relative">
-                Audience
-                <div className="absolute -bottom-2 left-0 w-full h-1 bg-[#CDF546] rounded-full transform -rotate-1"></div>
-              </span>."
-            </blockquote>
-            <div className="flex items-center justify-center gap-4">
-              <div className="w-16 h-16 bg-[#1A6950] rounded-2xl flex items-center justify-center">
-                <span className="text-2xl font-black text-[#FDF9DC] font-display">Z</span>
-              </div>
-              <div className="text-left">
-                <p className="text-[#CDF546] font-bold text-lg font-display">Zenko Team</p>
-                <p className="text-[#FDF9DC]/70 text-sm font-sans">Creative Directors & Founders</p>
-              </div>
-            </div>
+          <div className="text-left">
+            <p className="text-[#FFFBF4] font-bold font-display">Zenko Team</p>
+            <p className="text-[#D8CFBC] text-sm font-sans">Creative Directors</p>
+          </div>
         </div>
       </div>
     </div>

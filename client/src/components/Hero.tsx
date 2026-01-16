@@ -1,167 +1,151 @@
-
 import React from 'react';
-import { Play, Star } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 import Marquee from 'react-fast-marquee';
-import { useGujaratiAudience } from '@/hooks/useGujaratiAudience';
+
 const HeroImage = '/src/components/assets/image.png';
 
 const Hero: React.FC = () => {
   const marqueeContent = [
     "BRANDING",
-    "+",
-    "GRAPHIC DESIGN",
-    "+",
+    "•",
     "WEB DESIGN",
-    "+",
+    "•",
     "DIGITAL MARKETING",
-    "+",
-    "SEO OPTIMIZATION",
-    "+",
-    "HOSTING SERVICES",
+    "•",
+    "SEO",
+    "•",
+    "DEVELOPMENT",
+    "•",
   ];
 
-  const audience = useGujaratiAudience();
   return (
-    <section id="home" className="relative bg-gradient-to-br from-[#01583F] via-[#1A6950] to-[#01583F] overflow-visible">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
+    <section id="home" className="relative bg-[#11120D] overflow-hidden min-h-screen">
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 bg-pattern-grid opacity-5"></div>
+      
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#11120D] via-[#11120D] to-[#565449]/20"></div>
 
-      {/* Hero content container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 pb-28">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center min-h-[65vh]">
-          {/* Left: intro text and stats */}
-          <div className="lg:col-span-1 space-y-8 animate-slide-in-left">
-            <p className="text-[#CDF546] uppercase tracking-widest font-bold text-sm leading-relaxed font-sans">
-              {audience.isGujarati ? 'અમારી ટીમ દરેક પ્રોજેક્ટમાં સર્જનાત્મકતા લાવે છે.' : 'THE EXPERT TEAM BRINGS CREATIVITY TO EVERY PROJECT.'}
+      {/* Main content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
+          
+          {/* Left: Content */}
+          <div className="space-y-8 animate-fade-in-up">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#565449]/30 rounded-full border border-[#565449]">
+              <span className="w-2 h-2 bg-[#D8CFBC] rounded-full animate-pulse"></span>
+              <span className="text-[#D8CFBC] text-sm font-medium tracking-wide">CREATIVE DIGITAL AGENCY</span>
+            </div>
+
+            {/* Main Headline */}
+            <div className="space-y-4">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black text-[#FFFBF4] leading-[0.9] tracking-tight">
+                WE BUILD
+              </h1>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black leading-[0.9] tracking-tight">
+                <span className="text-[#D8CFBC]">DIGITAL</span>
+              </h1>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black text-[#FFFBF4] leading-[0.9] tracking-tight">
+                EXPERIENCES
+              </h1>
+            </div>
+
+            {/* Description */}
+            <p className="text-[#D8CFBC] text-lg md:text-xl max-w-xl leading-relaxed font-sans">
+              Transform your brand with cutting-edge design, strategic marketing, and innovative digital solutions that drive real results.
             </p>
-            
-            {/* Team avatars */}
-            <div className="flex space-x-4">
-              <div className="w-16 h-16 bg-[#1A6950] rounded-full flex items-center justify-center animate-float">
-                <span className="text-[#FDF9DC] font-bold text-lg">A</span>
-              </div>
-              <div className="w-16 h-16 bg-[#1A6950] rounded-full flex items-center justify-center animate-float" style={{animationDelay: '0.2s'}}>
-                <span className="text-[#FDF9DC] font-bold text-lg">B</span>
-              </div>
-              <div className="w-16 h-16 bg-[#1A6950] rounded-full flex items-center justify-center animate-float" style={{animationDelay: '0.4s'}}>
-                <span className="text-[#FDF9DC] font-bold text-lg">C</span>
-              </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center gap-3 bg-[#D8CFBC] text-[#11120D] px-8 py-4 rounded-full font-bold text-lg font-sans hover:bg-[#FFFBF4] transition-all duration-300 transform hover:scale-105 group"
+              >
+                Start Your Project
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <button className="inline-flex items-center justify-center gap-3 bg-transparent border-2 border-[#565449] text-[#FFFBF4] px-8 py-4 rounded-full font-bold text-lg font-sans hover:border-[#D8CFBC] hover:text-[#D8CFBC] transition-all duration-300 group">
+                <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                Watch Showreel
+              </button>
             </div>
 
             {/* Stats */}
-            <div className="space-y-6">
-              <div className="flex flex-col items-start space-y-2">
-                <span className="text-[#FDF9DC] font-bold text-5xl lg:text-6xl animate-fade-in-up">50+</span>
-                <span className="text-[#FDF9DC]/80 text-sm font-medium tracking-wider">HAPPY CLIENTS</span>
+            <div className="flex gap-12 pt-8 border-t border-[#565449]/50">
+              <div>
+                <span className="text-4xl md:text-5xl font-display font-black text-[#FFFBF4]">50+</span>
+                <p className="text-[#D8CFBC] text-sm mt-1 font-sans">Happy Clients</p>
               </div>
-              <div className="flex flex-col items-start space-y-2">
-                <span className="text-[#FDF9DC] font-bold text-5xl lg:text-6xl animate-fade-in-up" style={{animationDelay: '0.2s'}}>60+</span>
-                <span className="text-[#FDF9DC]/80 text-sm font-medium tracking-wider">PROJECTS DONE</span>
+              <div>
+                <span className="text-4xl md:text-5xl font-display font-black text-[#FFFBF4]">60+</span>
+                <p className="text-[#D8CFBC] text-sm mt-1 font-sans">Projects Done</p>
               </div>
-              <div className="flex flex-col items-start space-y-2">
-                <span className="text-[#FDF9DC] font-bold text-5xl lg:text-6xl animate-fade-in-up" style={{animationDelay: '0.4s'}}>40+</span>
-                <span className="text-[#FDF9DC]/80 text-sm font-medium tracking-wider">MEDIA FEATURED</span>
+              <div>
+                <span className="text-4xl md:text-5xl font-display font-black text-[#FFFBF4]">5+</span>
+                <p className="text-[#D8CFBC] text-sm mt-1 font-sans">Years Experience</p>
               </div>
             </div>
           </div>
 
-          {/* Center: big title + image */}
-          <div className="lg:col-span-1 flex flex-col items-center justify-center space-y-8 animate-fade-in-up">
-              <div className="text-center relative">
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black text-[#FDF9DC] leading-none mb-2">
-                  CREATIVE
-                </h1>
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black text-[#CDF546] leading-none relative z-10">
-                  AGENCY
-                </h1>
-                {/* Subtle background text */}
-                <div className="absolute inset-0 text-[#FDF9DC]/5 text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-black -z-10 transform rotate-12 translate-x-4 translate-y-4">
-                  CREATIVE
-                </div>
-              </div>
-
-            {/* Hero Image */}
-            <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[26rem] lg:h-[26rem] overflow-visible -mt-10">
-              {/* Background circles for depth */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#F56013]/20 to-transparent rounded-full " ></div>
-              <div className="absolute inset-4 bg-gradient-to-tl from-[#1A6950]/30 to-transparent rounded-full" style={{animationDelay: '0.5s'}}></div>
-              
-              {/* Floating elements */}
-              <div className="absolute -top-8 -right-8 w-16 h-16 bg-[#F56013] rounded-2xl opacity-80" style={{animationDelay: '1s'}}></div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-[#CDF546] rounded-full opacity-60" style={{animationDelay: '2s'}}></div>
-              
-              <img
-                src={HeroImage}
-                alt="Creative Team Member - Professional web developer and designer"
-                className="relative z-30 w-full h-full object-contain hover-lift transition-all duration-700 hover:scale-105"
-                style={{ 
-                  filter: 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3))',
-                  transform: 'rotate(-4deg)',
-                   bottom: '6rem'
-                }}
-                loading="eager"
-              />
-              
-              {/* Glow effect */}
-              <div className="absolute inset-8 bg-gradient-to-r from-[#F56013]/10 to-[#CDF546]/10 rounded-full blur-3xl opacity-50"></div>
-            </div>
-          </div>
-
-          {/* Right: description + buttons */}
-              <div className="lg:col-span-1 space-y-8 animate-slide-in-right" style={{bottom: '3'}}>
-              <p className="text-[#FDF9DC]/90 text-base leading-relaxed font-sans">
-                {audience.isGujarati
-                  ? 'અમે ગુજરાતી વ્યવસાયો માટે ઉપયુક્ત ડિજિટલ સોલ્યુશન્સ બનાવીએ છીએ — વેબસાઇટ, બ્રાન્ડિંગ અને માર્કેટિંગ જે ખરેખર પરિણામ આપે.'
-                  : 'We create innovative digital solutions that transform your business vision into reality. Our expert team combines creativity with strategy to deliver exceptional results.'}
-              </p>
-              
-              <div className="space-y-4">
-                <button className="bg-[#F56013] text-[#01583F] px-8 py-4 rounded-full font-bold text-lg font-sans hover:bg-[#CDF546] transition-all duration-300 transform hover:scale-105">
-                  {audience.primaryCTA}
-                </button>
-              
-              <div className="flex items-center space-x-4">
-                <button className="w-16 h-16 bg-[#CDF546] rounded-full flex items-center justify-center hover-scale group">
-                  <Play className="w-6 h-6 text-[#01583F] ml-1 group-hover:scale-110 transition-transform" />
-                </button>
-                <span className="text-[#FDF9DC]/90 text-sm font-medium font-sans">Watch Our Story</span>
-              </div>
-            </div>
+          {/* Right: Hero Image */}
+          <div className="relative flex items-center justify-center animate-slide-in-right">
+            {/* Background shapes */}
+            <div className="absolute w-[500px] h-[500px] bg-[#565449]/20 rounded-full blur-3xl"></div>
+            <div className="absolute w-[300px] h-[300px] bg-[#D8CFBC]/10 rounded-full blur-2xl -top-10 -right-10"></div>
             
-            {/* Floating star element */}
-            <div className="w-12 h-12 bg-[#F56013] rounded-full flex items-center justify-center hover-scale">
-              <Star className="w-6 h-6 text-[#01583F]" />
+            {/* Image container */}
+            <div className="relative z-10">
+              {/* Decorative frame */}
+              <div className="absolute -inset-4 border-2 border-[#565449] rounded-3xl transform rotate-3"></div>
+              <div className="absolute -inset-8 border border-[#565449]/50 rounded-3xl transform -rotate-2"></div>
+              
+              {/* Main image */}
+              <div className="relative bg-gradient-to-br from-[#565449] to-[#11120D] rounded-2xl p-2 shadow-2xl">
+                <img
+                  src={HeroImage}
+                  alt="Creative Professional"
+                  className="w-full max-w-md h-auto object-cover rounded-xl"
+                  style={{ 
+                    filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4))'
+                  }}
+                  loading="eager"
+                />
+              </div>
+              
+              {/* Floating accent elements */}
+              <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#D8CFBC] rounded-2xl flex items-center justify-center shadow-xl animate-float">
+                <span className="text-[#11120D] font-display font-black text-xl">Z</span>
+              </div>
+              <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-[#565449] rounded-full flex items-center justify-center shadow-xl" style={{animationDelay: '1s'}}>
+                <span className="text-[#FFFBF4] text-xl">✦</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Service Marquee Banner (moved up and tilted 5deg) */}
-      <div className="absolute left-0 right-0 pointer-events-none select-none z-20" style={{ bottom: '4rem' }}>
-        <div className="relative transform origin-left rotate-[-3deg]">
-          <div className="bg-[#CDF546] py-6">
-            <div className="transform">
-              <Marquee
-                direction="right"
-                speed={200}
-                gradient={false}
-                pauseOnHover={false}
-                loop={0}
-                className="flex items-center whitespace-nowrap"
+      {/* Bottom Marquee */}
+      <div className="absolute bottom-0 left-0 right-0 z-20">
+        <div className="bg-[#D8CFBC] py-4">
+          <Marquee
+            direction="left"
+            speed={80}
+            gradient={false}
+            pauseOnHover={false}
+            loop={0}
+          >
+            {marqueeContent.map((word, idx) => (
+              <span
+                key={idx}
+                className={`mx-6 text-2xl md:text-3xl font-display font-black uppercase tracking-wider ${
+                  word === '•' ? 'text-[#565449]' : 'text-[#11120D]'
+                }`}
               >
-                {marqueeContent.map((word, idx) => (
-                    <span
-                      key={idx}
-                      className={`mx-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black uppercase tracking-widest ${
-                        word === '+' ? 'text-[#1A6950]' : 'text-[#01583F]'
-                      }`}
-                    >
-                      {word}
-                    </span>
-                  ))}
-              </Marquee>
-            </div>
-          </div>
+                {word}
+              </span>
+            ))}
+          </Marquee>
         </div>
       </div>
     </section>
