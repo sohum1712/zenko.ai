@@ -1,6 +1,7 @@
 import React from 'react';
 import { Star } from 'lucide-react';
 import { motion } from 'framer-motion';
+import TranslatedText from './TranslatedText';
 
 const Testimonials: React.FC = () => {
   const testimonials = [
@@ -37,13 +38,15 @@ const Testimonials: React.FC = () => {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#4d8af0]/10 rounded-full border border-[#4d8af0]/20 mb-6">
             <span className="w-2 h-2 bg-[#4d8af0] rounded-full"></span>
-            <span className="text-[#4d8af0] text-sm font-medium tracking-wide" style={{ fontFamily: "'Inter', sans-serif" }}>TESTIMONIALS</span>
+            <span className="text-[#4d8af0] text-sm font-medium tracking-wide" style={{ fontFamily: "'Inter', sans-serif" }}>
+              <TranslatedText>TESTIMONIALS</TranslatedText>
+            </span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#1a1a2e] leading-tight mb-6" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-            What Our <span className="text-[#4d8af0]">Clients</span> Say
+            <TranslatedText>What Our</TranslatedText> <span className="text-[#4d8af0]"><TranslatedText>Clients</TranslatedText></span> <TranslatedText>Say</TranslatedText>
           </h2>
           <p className="text-[#6b7280] text-base md:text-lg max-w-2xl mx-auto" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Real success stories from businesses that transformed their digital presence with our solutions.
+            <TranslatedText>Real success stories from businesses that transformed their digital presence with our solutions.</TranslatedText>
           </p>
         </motion.div>
 

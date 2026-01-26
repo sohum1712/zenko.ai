@@ -1,86 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap');
-
-@font-face {
-  font-family: 'Helvetica Neue';
-  src: local('Helvetica Neue Condensed Black'), local('HelveticaNeue-CondensedBlack'), local('Helvetica Neue'), local('HelveticaNeue');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Deviantly Brush';
-  src: local('Deviantly Brush'), local('DeviantlyBrush');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* Zenko Elegant Color Palette */
-  --primary: #11120D;        /* Smoky Black */
-  --primary-light: #565449;  /* Olive Drab */
-  --primary-dark: #11120D;   /* Smoky Black */
-  --secondary: #565449;      /* Olive Drab */
-  --secondary-light: #565449; /* Olive Drab */
-  --secondary-dark: #11120D; /* Smoky Black */
-  --accent: #D8CFBC;         /* Bone */
-  --accent-light: #FFFBF4;   /* Floral White */
-  --accent-dark: #D8CFBC;    /* Bone */
-  --neutral: #FFFBF4;        /* Floral White */
-  --neutral-light: #FFFBF4;  /* Floral White */
-  --neutral-dark: #565449;   /* Olive Drab */
-  --success: #D8CFBC;        /* Bone */
-  --warning: #565449;        /* Olive Drab */
-  --error: #565449;          /* Olive Drab */
+  /* Zenko Brand Colors */
+  --primary: #4d8af0;
+  --primary-light: #6ba3f5;
+  --primary-dark: #3b7ae0;
+  --secondary: #1a1a2e;
+  --secondary-light: #2a2a4e;
+  --accent: #e8f4fc;
+  --neutral: #6b7280;
   
-  /* Backward compatibility */
-  --background: #11120D;
-  --foreground: #FFFBF4;
-  --card: #565449;
-  --card-foreground: #FFFBF4;
-  --popover: #565449;
-  --popover-foreground: #FFFBF4;
-  --muted: #565449;
-  --muted-foreground: #D8CFBC;
-  --border: #565449;
-  --input: #565449;
-  --ring: #D8CFBC;
+  /* Shadcn UI Variables */
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 98%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
   --radius: 0.5rem;
-  
-  /* Typography */
-  --font-sans: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-display: 'Helvetica Neue', 'Arial Black', sans-serif;
-  --font-accent: 'Deviantly Brush', cursive;
-  --font-mono: 'Fira Code', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-  
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 }
 
-/* Dark mode support */
 .dark {
-  --background: #11120D;
-  --foreground: #FFFBF4;
-  --card: #565449;
-  --card-foreground: #FFFBF4;
-  --popover: #565449;
-  --popover-foreground: #FFFBF4;
-  --muted: #565449;
-  --muted-foreground: #D8CFBC;
-  --border: #565449;
-  --input: #565449;
-  --ring: #D8CFBC;
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
 }
 
 @layer base {
@@ -89,250 +54,74 @@
   }
 
   html {
-    @apply font-sans text-base antialiased;
+    @apply antialiased;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #11120D;
-    color: #FFFBF4;
   }
 
   body {
-    @apply min-h-screen transition-colors duration-200;
-    font-feature-settings: 'rlig' 1, 'calt' 1, 'ss01' 1;
+    @apply bg-background text-foreground min-h-screen;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
     overflow-x: hidden;
-    background-color: #11120D;
-    color: #FFFBF4;
-  }
-
-  /* Typography */
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-bold tracking-tight;
-    color: #FFFBF4;
-  }
-
-  h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight;
-  }
-
-  h2 {
-    @apply text-3xl md:text-4xl font-bold leading-tight;
-  }
-
-  h3 {
-    @apply text-2xl md:text-3xl font-bold leading-snug;
-  }
-
-  p {
-    @apply text-base md:text-lg leading-relaxed;
-    color: #FFFBF4;
-  }
-
-  /* Links */
-  a {
-    @apply transition-colors duration-200;
-    color: #D8CFBC;
-  }
-  
-  a:hover {
-    color: #FFFBF4;
-  }
-
-  /* Buttons */
-  .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
-    --tw-ring-color: #D8CFBC;
-  }
-
-  .btn-primary {
-    background-color: #D8CFBC;
-    color: #11120D;
-  }
-  
-  .btn-primary:hover {
-    background-color: #FFFBF4;
-  }
-
-  .btn-secondary {
-    background-color: #565449;
-    color: #FFFBF4;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #D8CFBC;
-    color: #11120D;
-  }
-
-  .btn-outline {
-    @apply border-2;
-    border-color: #D8CFBC;
-    color: #D8CFBC;
-  }
-  
-  .btn-outline:hover {
-    background-color: #D8CFBC;
-    color: #11120D;
-  }
-
-  /* Forms */
-  input[type='text'],
-  input[type='email'],
-  input[type='password'],
-  input[type='number'],
-  input[type='tel'],
-  input[type='url'],
-  input[type='date'],
-  input[type='datetime-local'],
-  input[type='month'],
-  input[type='week'],
-  input[type='time'],
-  textarea,
-  select {
-    @apply w-full px-4 py-2 text-base rounded-md shadow-sm;
-    background-color: #565449;
-    border-color: #565449;
-    color: #FFFBF4;
-  }
-  
-  input:focus, textarea:focus, select:focus {
-    --tw-ring-color: #D8CFBC;
-    border-color: #D8CFBC;
-  }
-
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    @apply w-2 h-2;
-  }
-
-  ::-webkit-scrollbar-track {
-    background-color: #11120D;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: #565449;
-    border-radius: 9999px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #D8CFBC;
   }
 }
 
-/* Zenko-specific utility classes */
-@layer utilities {
-  .font-display {
-    font-family: var(--font-display);
-  }
-  
-  .font-accent {
-    font-family: var(--font-accent);
-  }
+/* Typography */
+.font-serif {
+  font-family: 'Times New Roman', Times, serif;
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, #D8CFBC, #FFFBF4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.font-sans {
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
-.floating-card {
-  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
-  transition: transform 0.3s ease;
+.font-shrikhand {
+  font-family: 'Shrikhand', cursive;
 }
 
-.floating-card:hover {
-  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(-10px);
+/* Gujarati text specific styles */
+.gujarati-text {
+  line-height: 1.4 !important;
+  overflow: visible !important;
 }
 
-/* Zenko-specific animations */
-@keyframes float {
-  0%, 100% { 
-    transform: translateY(0px); 
-  }
-  50% { 
-    transform: translateY(-20px); 
-  }
+/* Shrikhand font specific adjustments */
+.shrikhand-font {
+  font-family: 'Shrikhand', cursive;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
 }
 
-@keyframes pulse-slow {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
+/* Fix for text cutting in Gujarati */
+h1, h2, h3 {
+  overflow: visible;
+  white-space: normal;
 }
 
-@keyframes slide-in-left {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+/* Ensure proper spacing for Gujarati characters */
+[lang="gu"], .gujarati {
+  line-height: 1.5;
+  word-spacing: 0.1em;
 }
 
-@keyframes slide-in-right {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-@keyframes fade-in-up {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 9999px;
 }
 
-.animate-pulse-slow {
-  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.animate-slide-in-left {
-  animation: slide-in-left 0.8s ease-out;
-}
-
-.animate-slide-in-right {
-  animation: slide-in-right 0.8s ease-out;
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out;
-}
-
-/* Hover effects */
-.hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.hover-scale {
-  transition: transform 0.3s ease;
-}
-
-.hover-scale:hover {
-  transform: scale(1.05);
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
 }
 
 /* Screen reader only utility */
@@ -346,17 +135,4 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-/* Background patterns */
-.bg-pattern-dots {
-  background-image: radial-gradient(circle, #565449 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-.bg-pattern-grid {
-  background-image:
-    linear-gradient(#565449 1px, transparent 1px),
-    linear-gradient(90deg, #565449 1px, transparent 1px);
-  background-size: 20px 20px;
 }

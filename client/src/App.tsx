@@ -7,6 +7,8 @@ import { Toaster } from "./components/ui/toaster";
 import { TooltipProvider } from "./components/ui/tooltip";
 import ErrorBoundary from "./components/ErrorBoundary";
 import usePerformance from "./hooks/usePerformance";
+import { LanguageProvider } from "./contexts/LanguageContext";
+import LanguageToggle from "./components/LanguageToggle";
 import Home from "./pages/Home";
 import NotFound from "./pages/not-found";
 
@@ -28,8 +30,11 @@ function App() {
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
           <TooltipProvider>
-            <Toaster />
-            <Router />
+            <LanguageProvider>
+              <LanguageToggle />
+              <Toaster />
+              <Router />
+            </LanguageProvider>
           </TooltipProvider>
         </QueryClientProvider>
       </HelmetProvider>

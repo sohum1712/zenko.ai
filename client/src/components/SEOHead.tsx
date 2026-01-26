@@ -14,8 +14,8 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
-  title = "Zenko Digital - Professional Digital Agency | Web Development & Marketing",
-  description = "Transform your business with Zenko Digital's professional web development, design, and digital marketing services. We create innovative solutions that drive growth and engagement.",
+  title = "Zenko: Your Digital Growth Agency",
+  description = "Beautiful websites that work 24/7. Complete online presence packages. Get found, get leads, get results.",
   keywords = "web development, digital marketing, web design, e-commerce, mobile apps, branding, SEO, digital agency, business websites, online presence",
   image = "/og-image.png",
   url = "https://zenko.com",
@@ -24,14 +24,14 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   publishedTime,
   modifiedTime,
 }) => {
-  const fullTitle = title.includes('Zenko Digital') ? title : `${title} | Zenko Digital`;
+  const fullTitle = title.includes('Zenko') ? title : `${title} | Zenko`;
   const fullUrl = url.startsWith('http') ? url : `https://zenko.com${url}`;
   const fullImage = image.startsWith('http') ? image : `https://zenko.com${image}`;
 
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Zenko Digital",
+    "name": "Zenko",
     "description": description,
     "url": "https://zenko.com",
     "logo": "https://zenko.com/Zenko.svg",
@@ -88,7 +88,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:type" content={type} />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:image" content={fullImage} />
-      <meta property="og:site_name" content="Zenko Digital" />
+      <meta property="og:site_name" content="Zenko" />
       <meta property="og:locale" content="en_US" />
       
       {/* Twitter Card Meta Tags */}

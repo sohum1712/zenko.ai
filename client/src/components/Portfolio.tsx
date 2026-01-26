@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import LazyImage from '@/components/LazyImage';
+import TranslatedText from './TranslatedText';
 import Digital from "@/assets/Digital.png";
 import Brand from "@/assets/Brand_Building.png";
 import Marketing from "@/assets/Marketing.png";
@@ -54,13 +55,15 @@ const Portfolio: React.FC = () => (
       <div className="text-center mb-12 md:mb-16">
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#4d8af0]/10 rounded-full border border-[#4d8af0]/20 mb-6">
           <span className="w-2 h-2 bg-[#4d8af0] rounded-full"></span>
-          <span className="text-[#4d8af0] text-sm font-medium tracking-wide" style={{ fontFamily: "'Inter', sans-serif" }}>OUR WORK</span>
+          <span className="text-[#4d8af0] text-sm font-medium tracking-wide" style={{ fontFamily: "'Inter', sans-serif" }}>
+            <TranslatedText>OUR WORK</TranslatedText>
+          </span>
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#1a1a2e] leading-tight mb-6" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-          Featured <span className="text-[#4d8af0]">Projects</span>
+          <TranslatedText>Featured</TranslatedText> <span className="text-[#4d8af0]"><TranslatedText>Projects</TranslatedText></span>
         </h2>
         <p className="text-[#6b7280] text-base md:text-lg max-w-2xl mx-auto" style={{ fontFamily: "'Inter', sans-serif" }}>
-          Discover our comprehensive range of digital solutions designed to accelerate your business growth.
+          <TranslatedText>Discover our comprehensive range of digital solutions designed to accelerate your business growth.</TranslatedText>
         </p>
       </div>
 
@@ -85,16 +88,18 @@ const Portfolio: React.FC = () => (
             {/* Content */}
             <div className="p-5 md:p-6">
               <span className="text-xs px-3 py-1 bg-[#4d8af0]/10 text-[#4d8af0] rounded-full font-medium uppercase tracking-wider" style={{ fontFamily: "'Inter', sans-serif" }}>
-                {item.category}
+                <TranslatedText>{item.category}</TranslatedText>
               </span>
               <h3 className="text-[#1a1a2e] font-semibold text-lg md:text-xl mt-3 md:mt-4 mb-2 group-hover:text-[#4d8af0] transition-colors" style={{ fontFamily: "'Inter', sans-serif" }}>
-                {item.title}
+                <TranslatedText>{item.title}</TranslatedText>
               </h3>
               <p className="text-[#6b7280] text-sm leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
-                {item.description}
+                <TranslatedText>{item.description}</TranslatedText>
               </p>
               <div className="mt-4 flex items-center gap-2 text-[#4d8af0] group-hover:text-[#1a1a2e] transition-colors">
-                <span className="text-sm font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>View Project</span>
+                <span className="text-sm font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>
+                  <TranslatedText>View Project</TranslatedText>
+                </span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </div>
             </div>

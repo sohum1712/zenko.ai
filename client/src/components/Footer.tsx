@@ -1,6 +1,7 @@
 import React from 'react';
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { motion } from 'framer-motion';
+import TranslatedText from './TranslatedText';
 
 const Footer: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -33,7 +34,7 @@ const Footer: React.FC = () => {
               className="text-white/60 mb-6 md:mb-8 max-w-md text-sm md:text-base leading-relaxed"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Empowering businesses with innovative digital solutions that transform visions into reality. We combine creativity, strategy, and cutting-edge technology.
+              <TranslatedText>Empowering businesses with innovative digital solutions that transform visions into reality. We combine creativity, strategy, and cutting-edge technology.</TranslatedText>
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -61,7 +62,9 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold mb-5 md:mb-6 text-white text-base md:text-lg" style={{ fontFamily: "'Inter', sans-serif" }}>Services</h4>
+            <h4 className="font-semibold mb-5 md:mb-6 text-white text-base md:text-lg" style={{ fontFamily: "'Inter', sans-serif" }}>
+              <TranslatedText>Services</TranslatedText>
+            </h4>
             <ul className="space-y-2 md:space-y-3 text-white/60" style={{ fontFamily: "'Inter', sans-serif" }}>
               {['Business Websites', 'E-commerce', 'Portfolios', 'SEO & Marketing', 'Hosting & Support'].map((item) => (
                 <li key={item}>
@@ -69,7 +72,7 @@ const Footer: React.FC = () => {
                     onClick={() => scrollToSection('services')}
                     className="hover:text-[#4d8af0] transition-colors text-left text-sm"
                   >
-                    {item}
+                    <TranslatedText>{item}</TranslatedText>
                   </button>
                 </li>
               ))}
@@ -83,7 +86,9 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold mb-5 md:mb-6 text-white text-base md:text-lg" style={{ fontFamily: "'Inter', sans-serif" }}>Quick Links</h4>
+            <h4 className="font-semibold mb-5 md:mb-6 text-white text-base md:text-lg" style={{ fontFamily: "'Inter', sans-serif" }}>
+              <TranslatedText>Quick Links</TranslatedText>
+            </h4>
             <ul className="space-y-2 md:space-y-3 text-white/60" style={{ fontFamily: "'Inter', sans-serif" }}>
               {[
                 { label: 'About Us', id: 'about' },
@@ -96,7 +101,7 @@ const Footer: React.FC = () => {
                     onClick={() => scrollToSection(item.id)}
                     className="hover:text-[#4d8af0] transition-colors text-left text-sm"
                   >
-                    {item.label}
+                    <TranslatedText>{item.label}</TranslatedText>
                   </button>
                 </li>
               ))}

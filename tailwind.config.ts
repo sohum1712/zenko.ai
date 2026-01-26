@@ -5,146 +5,66 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      borderRadius: {
-        lg: "0.5rem",
-        md: "0.375rem",
-        sm: "0.25rem",
-      },
       colors: {
-        // Modern Professional Color Palette
+        // Zenko Brand Colors
         primary: {
-          DEFAULT: '#1A365D',    // Deep Navy
-          light: '#2C5282',     // Lighter Navy
-          dark: '#0F1E3D',      // Darker Navy
-          contrast: '#FFFFFF'    // White text for contrast
+          DEFAULT: '#4d8af0',
+          light: '#6ba3f5',
+          dark: '#3b7ae0',
+          contrast: '#ffffff'
         },
         secondary: {
-          DEFAULT: '#2D3748',   // Dark Gray
-          light: '#4A5568',     // Medium Gray
-          dark: '#1A202C',      // Charcoal
-          contrast: '#FFFFFF'    // White text for contrast
+          DEFAULT: '#1a1a2e',
+          light: '#2a2a4e',
+          dark: '#0f0f1e',
+          contrast: '#ffffff'
         },
         accent: {
-          DEFAULT: '#3182CE',   // Vibrant Blue
-          light: '#63B3ED',     // Light Blue
-          dark: '#2C5282',      // Dark Blue
-          contrast: '#FFFFFF'    // White text for contrast
+          DEFAULT: '#e8f4fc',
+          light: '#f0f7fc',
+          dark: '#d0e8f7',
+          contrast: '#1a1a2e'
         },
         neutral: {
-          DEFAULT: '#E2E8F0',   // Light Gray
-          light: '#F7FAFC',     // Off-White
-          dark: '#A0AEC0',      // Medium Gray
-          contrast: '#1A202C'   // Dark text for contrast
-        },
-        success: {
-          DEFAULT: '#38A169',   // Green
-          light: '#68D391',     // Light Green
-          dark: '#2F855A',      // Dark Green
-          contrast: '#FFFFFF'    // White text for contrast
-        },
-        warning: {
-          DEFAULT: '#DD6B20',   // Orange
-          light: '#F6AD55',     // Light Orange
-          dark: '#C05621',      // Dark Orange
-          contrast: '#FFFFFF'    // White text for contrast
-        },
-        error: {
-          DEFAULT: '#E53E3E',   // Red
-          light: '#FC8181',     // Light Red
-          dark: '#C53030',      // Dark Red
-          contrast: '#FFFFFF'    // White text for contrast
+          DEFAULT: '#6b7280',
+          light: '#9ca3af',
+          dark: '#4b5563',
+          contrast: '#ffffff'
         },
         
-        // Legacy colors
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        // Shadcn UI Colors
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         card: {
-          DEFAULT: "var(--card)",
-          foreground: "var(--card-foreground)",
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
         },
         popover: {
-          DEFAULT: "var(--popover)",
-          foreground: "var(--popover-foreground)",
-        },
-        primary: {
-          DEFAULT: "var(--primary)",
-          foreground: "var(--primary-foreground)",
-        },
-        secondary: {
-          DEFAULT: "var(--secondary)",
-          foreground: "var(--secondary-foreground)",
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
         },
         muted: {
-          DEFAULT: "var(--muted)",
-          foreground: "var(--muted-foreground)",
-        },
-        accent: {
-          DEFAULT: "var(--accent)",
-          foreground: "var(--accent-foreground)",
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
         destructive: {
-          DEFAULT: "var(--destructive)",
-          foreground: "var(--destructive-foreground)",
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
         },
-        border: "var(--border)",
-        input: "var(--input)",
-        ring: "var(--ring)",
-        chart: {
-          "1": "var(--chart-1)",
-          "2": "var(--chart-2)",
-          "3": "var(--chart-3)",
-          "4": "var(--chart-4)",
-          "5": "var(--chart-5)",
-        },
-        sidebar: {
-          DEFAULT: "var(--sidebar)",
-          foreground: "var(--sidebar-foreground)",
-          primary: "var(--sidebar-primary)",
-          "primary-foreground": "var(--sidebar-primary-foreground)",
-          accent: "var(--sidebar-accent)",
-          "accent-foreground": "var(--sidebar-accent-foreground)",
-          border: "var(--sidebar-border)",
-          ring: "var(--sidebar-ring)",
-        },
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
       },
-        fontFamily: {
-          sans: ['Archivo', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-          display: ['Helvetica Neue', 'Arial Black', 'system-ui', 'sans-serif'],
-          accent: ['Deviantly Brush', 'cursive'],
-          mono: ['Fira Code', 'Menlo', 'monospace'],
-        },
-      spacing: {
-        '128': '32rem',
-        '144': '36rem',
-      },
-      maxWidth: {
-        '8xl': '88rem',
-        '9xl': '96rem',
-      },
-      opacity: {
-        '15': '0.15',
-        '85': '0.85',
-      },
-      scale: {
-        '102': '1.02',
-      },
-      boxShadow: {
-        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
-        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        'elevate': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Times New Roman', 'Times', 'serif'],
+        mono: ['Fira Code', 'monospace'],
+        shrikhand: ['Shrikhand', 'cursive'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
-        'scroll-horizontal': 'scroll-horizontal 20s linear infinite',
-        'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
-        'slide-in-left': 'slide-in-left 0.8s ease-out',
-        'slide-in-right': 'slide-in-right 0.8s ease-out',
-        'slide-right': 'slide-right 2s ease-in-out infinite',
         'fade-in-up': 'fade-in-up 0.8s ease-out',
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
       },
       keyframes: {
         float: {
@@ -155,58 +75,12 @@ export default {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.5' },
         },
-        'neon-pulse': {
-          '0%, 100%': { boxShadow: '0 0 20px var(--zenko-neon-green)' },
-          '50%': { boxShadow: '0 0 40px var(--zenko-neon-green), 0 0 60px var(--zenko-neon-green)' },
-        },
-        'scroll-horizontal': {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(-100%)' },
-        },
-        'glow-pulse': {
-          '0%, 100%': { filter: 'brightness(1)' },
-          '50%': { filter: 'brightness(1.2)' },
-        },
-        'slide-in-left': {
-          '0%': { transform: 'translateX(-100%)', opacity: '0' },
-          '100%': { transform: 'translateX(0)', opacity: '1' },
-        },
-        'slide-in-right': {
-          '0%': { transform: 'translateX(100%)', opacity: '0' },
-          '100%': { transform: 'translateX(0)', opacity: '1' },
-        },
         'fade-in-up': {
           '0%': { transform: 'translateY(30px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
-        'slide-right': {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(100%)' },
-        },
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
-        },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
-        },
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("@tailwindcss/typography"),
-    require('@tailwindcss/forms')({
-      strategy: 'class',
-    }),
-  ],
+  plugins: [],
 } satisfies Config;

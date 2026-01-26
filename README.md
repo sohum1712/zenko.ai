@@ -1,80 +1,63 @@
-# Zenko Digital - Digital Agency Website
+# Zenko Digital - Your Digital Growth Agency
 
-A modern, responsive website for Zenko Digital, a digital agency specializing in web development, design, and digital marketing services.
+A modern, responsive website for Zenko Digital Agency built with React, TypeScript, and Tailwind CSS. Features bilingual support (English/Gujarati), professional design, and comprehensive contact functionality.
 
 ## 🚀 Features
 
-- **Modern React Frontend** - Built with React 18, TypeScript, and Vite
-- **Responsive Design** - Mobile-first approach with Tailwind CSS
-- **Interactive Components** - Framer Motion animations and smooth transitions
-- **Contact Form** - Functional contact form with email notifications
-- **Professional UI** - Clean, modern design with custom color scheme
-- **Type Safety** - Full TypeScript implementation
-- **Fast Development** - Hot module replacement with Vite
+- **Bilingual Support**: Complete English and Gujarati translations
+- **Responsive Design**: Mobile-first approach with modern UI/UX
+- **Professional Contact Form**: Working email integration with validation
+- **Modern Tech Stack**: React 18, TypeScript, Tailwind CSS, Framer Motion
+- **SEO Optimized**: Meta tags, semantic HTML, and performance optimized
+- **Accessibility**: WCAG compliant with proper ARIA labels and keyboard navigation
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **React 18** - Modern React with hooks
+- **React 18** - Modern React with hooks and functional components
 - **TypeScript** - Type-safe development
-- **Vite** - Fast build tool and dev server
 - **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Animation library
-- **Radix UI** - Accessible component primitives
+- **Framer Motion** - Smooth animations and transitions
 - **Lucide React** - Beautiful icons
+- **React Hook Form** - Form handling and validation
 
-### Backend
-- **Node.js** - JavaScript runtime
-- **Express.js** - Web framework
-- **Nodemailer** - Email service
-- **TypeScript** - Type-safe server code
+### Backend & Services
+- **EmailJS** - Contact form email service
+- **Vite** - Fast build tool and development server
+- **Express** - Node.js server framework
 
 ### Development Tools
-- **ESBuild** - Fast bundler
-- **Cross-env** - Environment variables
-- **TSX** - TypeScript execution
+- **ESLint** - Code linting
+- **PostCSS** - CSS processing
+- **Autoprefixer** - CSS vendor prefixes
 
 ## 📁 Project Structure
 
 ```
 zenko-digital/
-├── client/                 # Frontend React application
+├── client/                 # Frontend application
 │   ├── src/
 │   │   ├── components/     # React components
-│   │   │   ├── ui/         # Reusable UI components
-│   │   │   ├── Header.tsx  # Navigation header
-│   │   │   ├── Hero.tsx    # Hero section
-│   │   │   ├── Services.tsx # Services section
-│   │   │   ├── About.tsx   # About section
-│   │   │   ├── Portfolio.tsx # Portfolio section
-│   │   │   ├── Testimonials.tsx # Client testimonials
-│   │   │   ├── Contact.tsx # Contact form
-│   │   │   └── Footer.tsx  # Footer
-│   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom React hooks
+│   │   │   ├── common/     # Reusable components
+│   │   │   └── ui/         # UI components
+│   │   ├── contexts/       # React contexts
+│   │   ├── hooks/          # Custom hooks
 │   │   ├── lib/            # Utility libraries
-│   │   └── index.css       # Global styles
+│   │   ├── locales/        # Translation files
+│   │   ├── pages/          # Page components
+│   │   └── types/          # TypeScript types
 │   └── index.html          # HTML template
-├── server/                 # Backend Express server
-│   ├── index.ts           # Server entry point
-│   ├── routes.ts          # API routes
-│   ├── vite.ts            # Vite integration
-│   ├── emailService.ts    # Email functionality
-│   └── storage.ts         # Data storage
-├── shared/                # Shared types and schemas
-├── dist/                  # Build output
-├── package.json           # Dependencies and scripts
-├── vite.config.ts         # Vite configuration
-├── tailwind.config.ts     # Tailwind configuration
-└── tsconfig.json          # TypeScript configuration
+├── server/                 # Backend server
+├── shared/                 # Shared types and schemas
+├── public/                 # Static assets
+└── dist/                   # Build output
 ```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-
-- **Node.js** (v18 or higher)
-- **npm** (v8 or higher)
+- Node.js 18+ 
+- npm or yarn
 
 ### Installation
 
@@ -89,29 +72,36 @@ zenko-digital/
    npm install
    ```
 
-3. **Set up environment variables (Optional)**
-   Create a `.env` file in the root directory:
+3. **Environment Setup**
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Update the `.env` file with your EmailJS credentials:
    ```env
-   EMAIL_PASSWORD=your_gmail_app_password
-   PORT=8080
+   VITE_EMAILJS_SERVICE_ID=your_service_id
+   VITE_EMAILJS_TEMPLATE_ID=your_template_id
+   VITE_EMAILJS_PUBLIC_KEY=your_public_key
+   VITE_CONTACT_EMAIL=your_contact_email
    ```
 
 ### Development
 
-1. **Start the full-stack development server**
+1. **Start the development server**
    ```bash
    npm run dev
    ```
-   This will start:
-   - Express backend server on `http://localhost:8080`
-   - React frontend with hot module replacement
-   - Automatically open your browser
+   This starts both the client (port 5173) and server concurrently.
 
-2. **Alternative: Run client-only development**
+2. **Start only the client**
    ```bash
    npm run dev:client
    ```
-   This will start only the React frontend on `http://localhost:5173`
+
+3. **Start only the server**
+   ```bash
+   npm run dev:server
+   ```
 
 ### Building for Production
 
@@ -120,121 +110,172 @@ zenko-digital/
    npm run build
    ```
 
-2. **Start the production server**
+2. **Start production server**
    ```bash
    npm start
    ```
 
-## 📝 Available Scripts
+3. **Type checking**
+   ```bash
+   npm run check
+   ```
 
-- `npm run dev` - Start full-stack development server (backend on 8080, frontend integrated)
-- `npm run dev:client` - Start client-only development server (frontend on 5173)
-- `npm run build` - Build frontend for production
-- `npm start` - Start production server
-- `npm run check` - Run TypeScript type checking
+## 🌐 Features Overview
+
+### 1. Hero Section
+- Dynamic floating tags with animations
+- Bilingual headline with gradient text effects
+- Call-to-action buttons with hover effects
+- Trust indicators with company logos
+
+### 2. About Section
+- Feature highlights with icons
+- Responsive grid layout
+- Smooth scroll animations
+
+### 3. Services Section
+- Three main service categories
+- Interactive cards with hover effects
+- Professional imagery and descriptions
+
+### 4. Portfolio Section
+- Six featured projects
+- Category-based filtering
+- Project details with technology tags
+
+### 5. Contact Section
+- Professional contact form
+- Real-time validation
+- EmailJS integration
+- Success/error notifications
+- Bilingual form labels and placeholders
+
+### 6. Language Toggle
+- Seamless English/Gujarati switching
+- Persistent language preference
+- Complete UI translation
+- Proper font handling for Gujarati text
 
 ## 🎨 Design System
 
-### Color Palette
-- **Primary Blue**: `#0066FF`
-- **Neon Green**: `#00FF88`
-- **Dark Gray**: `#1A1A1A`
-- **Black**: `#000000`
-- **White**: `#FFFFFF`
-- **Orange**: `#FF6B35`
-- **Yellow**: `#FFD700`
+### Colors
+- **Primary**: #4d8af0 (Zenko Blue)
+- **Secondary**: #1a1a2e (Dark Navy)
+- **Accent**: #e8f4fc (Light Blue)
+- **Neutral**: #6b7280 (Gray)
 
 ### Typography
-- **Display Font**: Space Grotesk
-- **Body Font**: Inter
-- **Serif Font**: Georgia
-- **Mono Font**: Menlo
+- **Primary Font**: Inter (Sans-serif)
+- **Accent Font**: Shrikhand (Gujarati highlights)
+- **Serif Font**: Times New Roman (Headings)
 
-## 📧 Contact Form
+### Components
+- Consistent spacing and sizing
+- Rounded corners (12px, 16px, 24px)
+- Subtle shadows and gradients
+- Smooth transitions (300ms)
 
-The contact form includes:
-- Name and email validation
-- Business type selection
-- Budget range selection
-- Project details textarea
-- Email notifications via Nodemailer
+## 📧 Email Configuration
 
-### Email Configuration
+The contact form uses EmailJS for email delivery. To set up:
 
-To enable email notifications:
-1. Set up a Gmail app password
-2. Add it to your `.env` file as `EMAIL_PASSWORD`
-3. The form will send notifications to the configured email address
+1. Create an account at [EmailJS](https://www.emailjs.com/)
+2. Create a service (Gmail, Outlook, etc.)
+3. Create an email template
+4. Get your service ID, template ID, and public key
+5. Update the `.env` file with your credentials
 
-## 🔧 Configuration
+### Email Template Variables
+- `{{from_name}}` - Sender's name
+- `{{from_email}}` - Sender's email
+- `{{phone}}` - Phone number
+- `{{business_type}}` - Business type
+- `{{message}}` - Message content
+- `{{to_email}}` - Recipient email
 
-### Vite Configuration
-- Path aliases: `@` for `client/src`, `@shared` for shared code
-- React plugin for JSX transformation
-- Development server on port 5173
+## 🌍 Internationalization
 
-### TypeScript Configuration
-- Strict mode enabled
-- Path mapping for clean imports
-- ES modules support
+The application supports English and Gujarati languages:
 
-### Tailwind Configuration
-- Custom color palette
-- Custom animations
-- Typography plugin
-- Responsive design utilities
+- **Translation files**: `client/src/locales/en.json` and `client/src/locales/gu.json`
+- **Language context**: `client/src/contexts/LanguageContext.tsx`
+- **Translation hook**: `client/src/hooks/useTranslation.ts`
+- **Components**: `TranslatedText`, `TranslatedInput`, `HighlightedTranslatedText`
+
+### Adding New Translations
+1. Add the key-value pair to both `en.json` and `gu.json`
+2. Use the `t()` function in components: `{t('your.translation.key')}`
+3. For form inputs, use `TranslatedInput` component
 
 ## 🚀 Deployment
 
-### Build Process
-1. Frontend is built with Vite
-2. Backend is bundled with ESBuild
-3. Static files are served from `dist/public`
+### Vercel (Recommended)
+1. Connect your GitHub repository to Vercel
+2. Set environment variables in Vercel dashboard
+3. Deploy automatically on push to main branch
 
-### Environment Variables
-- `NODE_ENV` - Environment (development/production)
-- `PORT` - Server port (default: 5173)
-- `EMAIL_PASSWORD` - Gmail app password for email service
+### Netlify
+1. Build the project: `npm run build`
+2. Deploy the `dist` folder to Netlify
+3. Set environment variables in Netlify dashboard
 
-## 🐛 Troubleshooting
+### Traditional Hosting
+1. Build the project: `npm run build`
+2. Upload the `dist` folder contents to your web server
+3. Configure your server to serve the `index.html` for all routes
 
-### Common Issues
+## 🔧 Customization
 
-1. **Port already in use**
-   - The server will automatically try the next available port
-   - Check the console output for the actual port being used
+### Adding New Sections
+1. Create a new component in `client/src/components/`
+2. Add translations to both language files
+3. Import and use in `client/src/pages/Home.tsx`
 
-2. **Import path errors**
-   - Ensure all imports use the `@/` alias for client code
-   - Check that `vite.config.ts` has correct path resolution
+### Modifying Styles
+- Update Tailwind config in `tailwind.config.ts`
+- Modify CSS variables in `client/src/index.css`
+- Use Tailwind classes for component styling
 
-3. **Email service not working**
-   - Verify `EMAIL_PASSWORD` is set in `.env`
-   - Ensure Gmail app password is correctly configured
+### Adding New Languages
+1. Create a new JSON file in `client/src/locales/`
+2. Update the language context to include the new language
+3. Add language toggle option in `LanguageToggle` component
 
-4. **TypeScript errors**
-   - Run `npm run check` to see all type errors
-   - Ensure all components have proper type annotations
+## 📱 Browser Support
 
-## 📄 License
-
-This project is licensed under the MIT License.
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run type checking: `npm run check`
-5. Test your changes
-6. Submit a pull request
+2. Create a feature branch: `git checkout -b feature/new-feature`
+3. Commit changes: `git commit -am 'Add new feature'`
+4. Push to branch: `git push origin feature/new-feature`
+5. Submit a pull request
 
-## 📞 Support
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🆘 Support
 
 For support and questions:
-- Email: hello@zenko.com
-- Phone: +91 98765 43210
+- Create an issue in the GitHub repository
+- Contact the development team
+
+## 🔄 Version History
+
+### v1.0.0 (Current)
+- Initial release
+- Bilingual support (English/Gujarati)
+- Complete website with all sections
+- Working contact form
+- Responsive design
+- Professional UI/UX
 
 ---
 
-**Zenko Digital** - Empowering businesses with innovative digital solutions.
+**Built with ❤️ by the Zenko Digital team**

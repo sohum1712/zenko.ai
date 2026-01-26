@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '@/components/Header';
-import Hero from '@/components/Hero';
+import Hero, { HeroBottomSection } from '@/components/Hero';
 import Services from '@/components/Services';
 import About from '@/components/About';
 import Portfolio from '@/components/Portfolio';
@@ -19,6 +19,7 @@ const Home: React.FC = () => {
         <Header />
         <main id="main-content" role="main" aria-label="Main content">
           <Hero />
+          <HeroBottomSection />
           <Services />
           <About />
           <Portfolio />

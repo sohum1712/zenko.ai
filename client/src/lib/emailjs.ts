@@ -1,9 +1,10 @@
 import emailjs from '@emailjs/browser';
 
-// EmailJS configuration - You'll need to replace these with your actual EmailJS credentials
-const EMAILJS_SERVICE_ID = 'service_w9mo3ru'; // Replace with your service ID
-const EMAILJS_TEMPLATE_ID = 'template_lc2n48s'; // Replace with your template ID
-const EMAILJS_PUBLIC_KEY = 'l-cebVhssjDBIrFfo'; // Replace with your public key
+// EmailJS configuration - Using environment variables for security
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_w9mo3ru';
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_lc2n48s';
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'l-cebVhssjDBIrFfo';
+const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL || 'sohamvaghela1712@gmail.com';
 
 // Initialize EmailJS
 emailjs.init(EMAILJS_PUBLIC_KEY);
@@ -24,7 +25,7 @@ export const sendContactEmail = async (formData: ContactFormData): Promise<boole
       phone: formData.phone,
       business_type: formData.businessType,
       message: formData.message,
-      to_email: 'sohamvaghela1712@gmail.com', // Your email address
+      to_email: CONTACT_EMAIL,
       reply_to: formData.email,
     };
 
@@ -35,19 +36,18 @@ export const sendContactEmail = async (formData: ContactFormData): Promise<boole
     );
 
     console.log('Email sent successfully:', response);
-    return true;
+    return response.status === 200;
   } catch (error) {
-    console.error('Failed to send email:', error);
-    return false;
+    console.error('EmailJS error:', error);
+    throw error;
   }
 };
 
-// Fallback function for development/testing
 export const sendContactEmailFallback = async (formData: ContactFormData): Promise<boolean> => {
   try {
     // For development, we'll just log the email data
     console.log('Email would be sent with the following data:', {
-      to: 'sohamvaghela1712@gmail.com',
+      to: CONTACT_EMAIL,
       from: formData.email,
       subject: `New Contact Form Submission from ${formData.name}`,
       body: `
@@ -63,7 +63,7 @@ export const sendContactEmailFallback = async (formData: ContactFormData): Promi
     await new Promise(resolve => setTimeout(resolve, 1000));
     return true;
   } catch (error) {
-    console.error('Failed to send email (fallback):', error);
+    console.error('Fallback email service error:', error);
     return false;
   }
 };

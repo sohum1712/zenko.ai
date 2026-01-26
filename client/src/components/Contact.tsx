@@ -1,206 +1,251 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send, ArrowRight } from 'lucide-react';
+import { Phone, Send, ArrowRight, MessageCircle, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { sendContactEmail, sendContactEmailFallback } from '@/lib/emailjs';
+import { useTranslation } from '@/hooks/useTranslation';
+import { TranslatedInput, TranslatedTextarea } from './TranslatedInput';
+import type { ContactFormData, ContactFormErrors } from '@/types';
 
 const Contact: React.FC = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
+  const { t } = useTranslation();
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
+    email: '',
     phone: '',
     message: '',
   });
+  const [errors, setErrors] = useState<ContactFormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateForm = (): boolean => {
+    const newErrors: ContactFormErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = t('form.fill_required_fields');
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = t('form.fill_required_fields');
+    } else if (!/^\+?[\d\s-()]+$/.test(formData.phone)) {
+      newErrors.phone = 'Please enter a valid phone number';
+    }
+
+    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = t('form.fill_required_fields');
+    } else if (formData.message.length > 5000) {
+      newErrors.message = 'Message is too long (max 5000 characters)';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.phone || !formData.message) {
+    
+    if (!validateForm()) {
       toast({
-        title: "Validation Error",
-        description: "Please fill in all required fields",
+        title: t('form.validation_error'),
+        description: t('form.fill_required_fields'),
         variant: "destructive",
       });
       return;
     }
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you soon.",
-    });
-    setFormData({ name: '', phone: '', message: '' });
+
+    setIsSubmitting(true);
+
+    try {
+      const emailData = {
+        name: formData.name,
+        email: formData.email || 'noemail@provided.com',
+        phone: formData.phone,
+        businessType: 'General Inquiry',
+        message: formData.message,
+      };
+
+      let success = false;
+      try {
+        success = await sendContactEmail(emailData);
+      } catch (error) {
+        console.log('EmailJS failed, using fallback:', error);
+        success = await sendContactEmailFallback(emailData);
+      }
+
+      if (success) {
+        toast({
+          title: t('form.message_sent_success'),
+          description: t('form.thank_you_message'),
+        });
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        setErrors({});
+      } else {
+        throw new Error('Failed to send email');
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      toast({
+        title: t('form.error_title'),
+        description: t('form.send_error_message'),
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const handleChange = (field: string, value: string) => {
+  const handleChange = (field: keyof ContactFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+    // Clear error when user starts typing
+    if (errors[field]) {
+      setErrors(prev => ({ ...prev, [field]: undefined }));
+    }
   };
 
   return (
-    <>
-      {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-[#1a1a2e] relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#4d8af0]/20 to-transparent"></div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-white leading-tight mb-6" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-              Ready to Transform Your <span className="text-[#4d8af0]">Business</span>?
-            </h2>
-            <p className="text-white/70 text-base md:text-xl mb-8 md:mb-10" style={{ fontFamily: "'Inter', sans-serif" }}>
-              Join hundreds of successful businesses that chose Zenko for their digital transformation journey.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-3 bg-[#4d8af0] text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-medium text-base md:text-lg hover:bg-[#3b7ae0] transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/30"
-                style={{ fontFamily: "'Inter', sans-serif" }}
-              >
-                Get Free Quote
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-3 bg-transparent border-2 border-white/30 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-medium text-base md:text-lg hover:border-[#4d8af0] hover:text-[#4d8af0] transition-all duration-300"
-                style={{ fontFamily: "'Inter', sans-serif" }}
-              >
-                <Phone className="w-4 h-4 md:w-5 md:h-5" />
-                Schedule Call
-              </a>
-            </div>
-          </motion.div>
+    <section id="contact" className="py-20 md:py-32 bg-gradient-to-br from-[#f8fbfe] via-white to-[#e8f4fc] relative overflow-hidden min-h-screen flex items-center">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#4d8af0]/5 to-transparent"></div>
         </div>
-      </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 md:py-28 bg-[#f8fbfe]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center mb-12 md:mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#4d8af0]/10 rounded-full border border-[#4d8af0]/20 mb-6">
-              <span className="w-2 h-2 bg-[#4d8af0] rounded-full"></span>
-              <span className="text-[#4d8af0] text-sm font-medium tracking-wide" style={{ fontFamily: "'Inter', sans-serif" }}>CONTACT US</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#1a1a2e] leading-tight mb-6" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-              Let's Build Something <span className="text-[#4d8af0]">Amazing</span>
-            </h2>
-            <p className="text-[#6b7280] text-base md:text-lg max-w-2xl mx-auto" style={{ fontFamily: "'Inter', sans-serif" }}>
-              Ready to take your business online? Get in touch with our team and let's discuss your project!
-            </p>
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center gap-2 px-6 py-3 bg-[#4d8af0]/10 rounded-full border border-[#4d8af0]/20 mb-6">
+                <Zap className="w-4 h-4 text-[#4d8af0]" />
+                <span className="text-[#4d8af0] text-sm font-semibold tracking-wide font-sans">
+                  {t('contact.contact_us')}
+                </span>
+              </div>
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-sans text-[#1a1a2e] leading-tight mb-6">
+                {t('contact.send_message')}
+              </h2>
+              <p className="text-[#6b7280] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-sans">
+                {t('contact.response_promise')}
+              </p>
+            </motion.div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+          <div className="max-w-2xl mx-auto">
+            {/* Centered Form */}
+            <motion.div 
+              className="w-full"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="rounded-2xl md:rounded-3xl bg-white border border-gray-100 p-6 md:p-8 shadow-sm"
             >
-              <h3 className="text-xl md:text-2xl font-semibold text-[#1a1a2e] mb-6" style={{ fontFamily: "'Inter', sans-serif" }}>Send us a message</h3>
-              <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
-                <div>
-                  <label className="block text-sm font-medium mb-2 text-[#6b7280]" style={{ fontFamily: "'Inter', sans-serif" }}>Full Name</label>
-                  <Input
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) => handleChange('name', e.target.value)}
-                    placeholder="Your name"
-                    className="rounded-xl bg-[#f8fbfe] text-[#1a1a2e] border-gray-200 placeholder:text-[#9ca3af] focus:border-[#4d8af0] focus:ring-[#4d8af0]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2 text-[#6b7280]" style={{ fontFamily: "'Inter', sans-serif" }}>Phone Number</label>
-                  <Input
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleChange('phone', e.target.value)}
-                    placeholder="+91 98765 43210"
-                    className="rounded-xl bg-[#f8fbfe] text-[#1a1a2e] border-gray-200 placeholder:text-[#9ca3af] focus:border-[#4d8af0] focus:ring-[#4d8af0]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2 text-[#6b7280]" style={{ fontFamily: "'Inter', sans-serif" }}>Project Details</label>
-                  <Textarea
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e) => handleChange('message', e.target.value)}
-                    placeholder="Tell us about your project requirements"
-                    className="rounded-xl resize-none bg-[#f8fbfe] text-[#1a1a2e] border-gray-200 placeholder:text-[#9ca3af] focus:border-[#4d8af0] focus:ring-[#4d8af0]"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="w-full py-3 md:py-4 rounded-xl font-medium bg-[#4d8af0] text-white hover:bg-[#3b7ae0] transition-all duration-300 shadow-lg shadow-blue-200/50"
-                >
-                  <Send className="mr-2" size={18} />
-                  Send Message
-                </Button>
-              </form>
-            </motion.div>
+              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl shadow-blue-100/20 border border-[#4d8af0]/10 relative overflow-hidden">
+                {/* Background Decoration */}
+                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#4d8af0]/5 to-transparent rounded-full -translate-y-20 translate-x-20"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#4d8af0]/5 to-transparent rounded-full translate-y-16 -translate-x-16"></div>
+                
+                <div className="relative z-10">
+                  <div className="text-center mb-10">
+                    <motion.div 
+                      className="w-20 h-20 bg-gradient-to-br from-[#4d8af0] to-[#6ba3f5] rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl shadow-blue-200/50"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <Send className="text-white w-8 h-8" />
+                    </motion.div>
+                  </div>
 
-            {/* Contact Information */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="space-y-4 md:space-y-6"
-            >
-              <div className="rounded-2xl md:rounded-3xl bg-white border border-gray-100 p-6 md:p-8 hover:border-[#4d8af0]/30 transition-colors shadow-sm">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 md:w-14 md:h-14 bg-[#4d8af0] rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg shadow-blue-200/50">
-                    <Phone className="text-white" size={22} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-[#1a1a2e]" style={{ fontFamily: "'Inter', sans-serif" }}>Call Us</h4>
-                    <p className="text-[#6b7280]" style={{ fontFamily: "'Inter', sans-serif" }}>+91 98765 43210</p>
-                  </div>
+                  <form onSubmit={handleSubmit} className="space-y-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium mb-4 text-[#1a1a2e] font-sans">
+                          {t('contact.full_name')} <span className="text-[#4d8af0]">*</span>
+                        </label>
+                        <TranslatedInput
+                          type="text"
+                          value={formData.name}
+                          onChange={(e) => handleChange('name', e.target.value)}
+                          placeholder="Your name"
+                          className={`w-full rounded-2xl bg-[#e8f4fc] text-[#1a1a2e] border-2 ${errors.name ? 'border-red-500' : 'border-[#4d8af0]/20'} placeholder:text-[#6b7280] focus:border-[#4d8af0] focus:ring-0 focus:bg-[#e8f4fc] h-16 px-6 text-lg transition-all duration-300 hover:border-[#4d8af0]/40 hover:bg-[#e8f4fc] hover:shadow-lg font-sans`}
+                          required
+                        />
+                        {errors.name && <p className="text-red-500 text-sm mt-2 font-sans">{errors.name}</p>}
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium mb-4 text-[#1a1a2e] font-sans">
+                          {t('contact.phone_number')} <span className="text-[#4d8af0]">*</span>
+                        </label>
+                        <TranslatedInput
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => handleChange('phone', e.target.value)}
+                          placeholder="+91 98765 43210"
+                          className={`w-full rounded-2xl bg-[#e8f4fc] text-[#1a1a2e] border-2 ${errors.phone ? 'border-red-500' : 'border-[#4d8af0]/20'} placeholder:text-[#6b7280] focus:border-[#4d8af0] focus:ring-0 focus:bg-[#e8f4fc] h-16 px-6 text-lg transition-all duration-300 hover:border-[#4d8af0]/40 hover:bg-[#e8f4fc] hover:shadow-lg font-sans`}
+                          required
+                        />
+                        {errors.phone && <p className="text-red-500 text-sm mt-2 font-sans">{errors.phone}</p>}
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium mb-4 text-[#1a1a2e] font-sans">
+                        {t('contact.email_address')} <span className="text-gray-400 text-sm font-normal">({t('contact.optional')})</span>
+                      </label>
+                      <TranslatedInput
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => handleChange('email', e.target.value)}
+                        placeholder="your.email@example.com"
+                        className={`w-full rounded-2xl bg-[#e8f4fc] text-[#1a1a2e] border-2 ${errors.email ? 'border-red-500' : 'border-[#4d8af0]/20'} placeholder:text-[#6b7280] focus:border-[#4d8af0] focus:ring-0 focus:bg-[#e8f4fc] h-16 px-6 text-lg transition-all duration-300 hover:border-[#4d8af0]/40 hover:bg-[#e8f4fc] hover:shadow-lg font-sans`}
+                      />
+                      {errors.email && <p className="text-red-500 text-sm mt-2 font-sans">{errors.email}</p>}
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium mb-4 text-[#1a1a2e] font-sans">
+                        {t('contact.project_details')} <span className="text-[#4d8af0]">*</span>
+                      </label>
+                      <TranslatedTextarea
+                        rows={6}
+                        value={formData.message}
+                        onChange={(e) => handleChange('message', e.target.value)}
+                        placeholder="Tell us about your project requirements"
+                        className={`w-full rounded-2xl resize-none bg-[#e8f4fc] text-[#1a1a2e] border-2 ${errors.message ? 'border-red-500' : 'border-[#4d8af0]/20'} placeholder:text-[#6b7280] focus:border-[#4d8af0] focus:ring-0 focus:bg-[#e8f4fc] px-6 py-5 text-lg transition-all duration-300 hover:border-[#4d8af0]/40 hover:bg-[#e8f4fc] hover:shadow-lg font-sans`}
+                        required
+                      />
+                      {errors.message && <p className="text-red-500 text-sm mt-2 font-sans">{errors.message}</p>}
+                    </div>
+                    
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full py-6 rounded-2xl font-medium text-xl bg-gradient-to-r from-[#4d8af0] to-[#6ba3f5] text-white hover:from-[#3b7ae0] hover:to-[#5a92f0] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-2xl shadow-blue-300/30 flex items-center justify-center gap-4 hover:shadow-2xl hover:shadow-blue-400/40 font-sans"
+                      >
+                        <Send className="w-6 h-6" />
+                        {isSubmitting ? t('contact.sending') : t('contact.send_message_btn')}
+                      </Button>
+                    </motion.div>
+                  </form>
                 </div>
-                <p className="text-[#6b7280] text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
-                  Available 24/7 for urgent support and consultations
-                </p>
-              </div>
-
-              <div className="rounded-2xl md:rounded-3xl bg-white border border-gray-100 p-6 md:p-8 hover:border-[#4d8af0]/30 transition-colors shadow-sm">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 md:w-14 md:h-14 bg-[#e8f4fc] rounded-xl md:rounded-2xl flex items-center justify-center border border-[#4d8af0]/20">
-                    <Mail className="text-[#4d8af0]" size={22} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-[#1a1a2e]" style={{ fontFamily: "'Inter', sans-serif" }}>Email Us</h4>
-                    <p className="text-[#6b7280]" style={{ fontFamily: "'Inter', sans-serif" }}>hello@zenko.com</p>
-                  </div>
-                </div>
-                <p className="text-[#6b7280] text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
-                  Send detailed project requirements and get comprehensive proposals
-                </p>
-              </div>
-
-              <div className="rounded-2xl md:rounded-3xl bg-white border border-gray-100 p-6 md:p-8 hover:border-[#4d8af0]/30 transition-colors shadow-sm">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 md:w-14 md:h-14 bg-[#4d8af0] rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg shadow-blue-200/50">
-                    <MapPin className="text-white" size={22} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-[#1a1a2e]" style={{ fontFamily: "'Inter', sans-serif" }}>Visit Us</h4>
-                    <p className="text-[#6b7280]" style={{ fontFamily: "'Inter', sans-serif" }}>Ahmedabad, Gujarat</p>
-                  </div>
-                </div>
-                <p className="text-[#6b7280] text-sm" style={{ fontFamily: "'Inter', sans-serif" }}>
-                  Schedule an in-person meeting to discuss your project in detail
-                </p>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
-    </>
-  );
-};
+    );
+  };
 
-export default Contact;
+  export default Contact;
